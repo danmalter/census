@@ -9,7 +9,8 @@
 #' @examples
 #' radius <- 2
 #' cities <- c("Chicago", "New York")
-#' getDemographics(cities, radius)
+#' df <- getDemographics(cities, radius)
+#' head(df)
 #' @export
 #'
 
@@ -65,4 +66,4 @@ getDemographics <- function(cities, radius) {
 ### Example ###
 #radius <- 2
 #cities <- c("Chicago", "New York")
-#getDemographics(cities, radius)
+df <- getDemographics(cities, radius)
