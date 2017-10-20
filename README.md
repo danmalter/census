@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/hrecht/censusapi.svg?branch=master)](https://travis-ci.org/hrecht/censusapi) [![CRAN Badge](https://www.r-pkg.org/badges/version/censusapi)](https://cran.r-project.org/package=censusapi)
 
-`censusR` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race.
+`censusR` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. 
 
-`censusR` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.
+`censusR` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.  Google Maps allows for 2500 free requests per day.  If running the same city too often, the Google Maps API may ignore that particular request.
 
 For more details, see [Getting started with censusR]() and the package's [website]().
 
