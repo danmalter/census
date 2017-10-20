@@ -59,13 +59,10 @@ getDemographics <- function(cities, radius) {
     }
 
     final.result <- do.call(rbind, result)
-    #head(final.result)
-
-    return(final.result[c(1,2,12,24,55,59,205), 1:10])
+    return(final.result)
 }
 
-#cities <- read_csv("~/Desktop/city_test.csv")
-#cities <- c(as.character(cities$City_State))
+### Example ###
 #radius <- 2
 #cities <- c("Chicago", "New York")
 #getDemographics(cities, radius)

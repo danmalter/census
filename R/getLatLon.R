@@ -18,5 +18,6 @@ getLatLon <- function(cities) {
   return(lat_lon)
 }
 
+### Example ###
 #cities <- c("Chicago", "New York")
 #getLatLon(cities)

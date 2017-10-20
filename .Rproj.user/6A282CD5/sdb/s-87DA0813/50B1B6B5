@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @title Get latidude and longitude\n#'\n#' @description  Takes in a city/state and outputs the name of the city, latitude and longitude\n#' @return Demographic data\n#' @importFrom RCurl getURL\n#' @importFrom ggmap geocode\n#' @examples\n#' cities <- c(\"Chicago\", \"New York\")\n#' getLatLon(cities)\n#' @export\n#'\n\ngetLatLon <- function(cities) {\n  geo <- ggmap::geocode(cities)\n  lat_lon <- data.frame(cbind(cities, geo$lon, geo$lat))\n  names(lat_lon)[2] <- \"lon\"\n  names(lat_lon)[3] <- \"lat\"\n  return(lat_lon)\n}\n\n### Example ###\n#cities <- c(\"Chicago\", \"New York\")\n#getLatLon(cities)\n",
+    "created" : 1508515157344.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2617097615",
+    "id" : "50B1B6B5",
+    "lastKnownWriteTime" : 1508528885,
+    "last_content_update" : 1508528885554,
+    "path" : "~/censusR/R/getLatLon.R",
+    "project_path" : "R/getLatLon.R",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
