@@ -25,8 +25,9 @@ Get demographic data for the cities of Chicago and New York. This example only s
 library(censusR)
 
 # City level data for Chicago and New York
+radius <- 2
 cities <- c("Chicago", "New York")
-getDemographics(cities)
+getDemographics(cities, radius)
 
 #>      sitename radius   Longitude     Latitude      TotPopSF1   AreaSQMI    LandSQMI  IntPtLat    IntPtLon
 #>      Chicago  2        -87.6297982   41.8781136    172,300     10.67397    9.12      41.882238   -87.634391
@@ -36,9 +37,10 @@ getDemographics(cities)
 If loading from city and state information from a csv file.  
 
 ```R
+radius <- 2
 cities <- read_csv("~/path/to/file.csv")
 cities <- c(as.character(cities$City_State))
-getDemographics(cities)
+getDemographics(cities, radius)
 ```
 
 ## Disclaimer
