@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @title Scrape US Census Data\n#'\n#' @description Takes in a city/state and outputs demographic data from the Missouri Census Data Center\n#' @param cities list of cities to be passed\n#' @param radius numeric number used to create a boundary around the city coordinates\n#' @return Data frame containing demographic data\n#' @importFrom RCurl getURL\n#' @importFrom ggmap geocode\n#' @examples\n#' radius <- 2\n#' cities <- c(\"Chicago\", \"New York\")\n#' getDemographics(cities, radius)\n#' @export\n#'\n\ngetDemographics <- function(cities, radius) {\n    geo <- ggmap::geocode(cities)\n    lat_lon <- data.frame(cbind(cities, geo$lon, geo$lat))\n    names(lat_lon)[2] <- \"lon\"\n    names(lat_lon)[3] <- \"lat\"\n\n    # Remove spaces between city names.  Example \"New York\" to \"NewYork\".\n    cities.lst <- list(lat_lon$cities)\n    for (i in 1:length(cities.lst)){\n      cities.lst <- gsub(\"[[:space:]]\", \"\", cities.lst[[i]])\n    }\n\n\n    lon.lst <- unlist(as.character(lat_lon$lon))\n    lat.lst <- unlist(as.character(lat_lon$lat))\n    #radius <- 2\n\n    url=as.list(paste(\"http://mcdc.missouri.edu/cgi-bin/broker\",\n              \"?_PROGRAM=websas.caps10acsb.sas&SERVICE=appdev\",\n              \"&sitename=\", cities.lst,\n              \"&longitude=\", lon.lst,\n              \"&latitude=\", lat.lst,\n              \"&radii=\", radius,\n              \"&dprofile=on&eprofile=on&sprofile=on&hprofile=on\",\n              \"&cntypops=on&printdetail=on&_debug=\",\n              sep=\"\"))\n    print(url)\n\n    result = list()\n\n    for (i in 1:length(url)){\n      html <- RCurl::getURL(url[[i]])\n      pattern <- \"href=\\\"/tmpscratch/caps10acs(.*?).csv\\\"\"\n      match.info <- regexec(pattern=pattern, text=html)\n      num.start <- match.info[[1]][2]\n      num.length <- attr(match.info[[1]], \"match.length\")[2]\n      num <- substr(html, num.start, num.start + num.length - 1)\n      file.location <- paste(\"http://mcdc.missouri.edu/tmpscratch/\",\n                             \"caps10acs\", num, \".csv\",\n                             sep=\"\")\n      file.location\n      data.tmp <- data.frame(read.csv(file=file.location, colClasses = \"character\"))\n      result[[i]] <- data.tmp\n    }\n\n    final.result <- do.call(rbind, result)\n    #head(final.result)\n\n    return(final.result[c(1,2,12,24,55,59,205), 1:10])\n}\n\n#cities <- read_csv(\"~/Desktop/city_test.csv\")\n#cities <- c(as.character(cities$City_State))\n#radius <- 2\n#cities <- c(\"Chicago\", \"New York\")\n#getDemographics(cities, radius)\n",
+    "created" : 1508528129441.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2007099341",
+    "id" : "B7FC666E",
+    "lastKnownWriteTime" : 1508528320,
+    "last_content_update" : 1508528320203,
+    "path" : "~/censusR/R/getDemographics.R",
+    "project_path" : "R/getDemographics.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
