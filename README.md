@@ -28,7 +28,7 @@ library(censusR)
 radius <- 2
 cities <- c("Chicago", "New York")
 df <- getDemographics(cities, radius)
-df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)
+df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)]
 
 #>  sitename  radius  TotPop    pctMales pctFemales AvgFamInc   pctPrivWageWorkers  pctGovWorkers pctMarried pctBachelors MedianHValue
 #>  Chicago   2       188,040   48.0     52.0       $192,455    86.7                9.0           35.3       38.9         $430,285

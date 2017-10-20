@@ -20,5 +20,6 @@ Takes in a city/state and outputs demographic data from the Missouri Census Data
 \examples{
 radius <- 2
 cities <- c("Chicago", "New York")
-getDemographics(cities, radius)
+df <- getDemographics(cities, radius)
+head(df)
 }

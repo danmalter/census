@@ -66,4 +66,5 @@ getDemographics <- function(cities, radius) {
 ### Example ###
 #radius <- 2
 #cities <- c("Chicago", "New York")
-df <- getDemographics(cities, radius)
+#df <- getDemographics(cities, radius)
+#head(df)
