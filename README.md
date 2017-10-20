@@ -27,7 +27,7 @@ library(censusR)
 # City level data for Chicago and New York
 radius <- 2
 cities <- c("Chicago, IL", "New York") # note: state is not needed, but can result in incorrect information if city name is in multiple states
-df <- getDemographics(cities, radius)
+df <- getCensus(cities, radius)
 df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)]
 
 #>  sitename  radius  TotPop    pctMales pctFemales AvgFamInc   pctPrivWageWorkers  pctGovWorkers pctMarried pctBachelors MedianHValue
@@ -42,7 +42,7 @@ library(readr)
 radius <- 2
 cities <- read_csv("~/path/to/file.csv")
 cities <- c(as.character(cities$City_State))
-df <- getDemographics(cities, radius)
+df <- getCensus(cities, radius)
 head(df)
 ```
 

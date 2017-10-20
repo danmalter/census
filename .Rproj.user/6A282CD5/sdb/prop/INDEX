@@ -4,6 +4,7 @@
 ~%2FcensusR%2FNAMESPACE="36C4F889"
 ~%2FcensusR%2FR%2FGet_Locations.R="B2E0663E"
 ~%2FcensusR%2FR%2FNAMESPACE="AB4F3DA5"
+~%2FcensusR%2FR%2FgetCensus.R="C68FDEDB"
 ~%2FcensusR%2FR%2FgetDemographics.R="55BEC57"
 ~%2FcensusR%2FR%2FgetLatLon.R="7533FB25"
 ~%2FcensusR%2FR%2Fhello.R="515270DF"

@@ -9,12 +9,12 @@
 #' @examples
 #' radius <- 2
 #' cities <- c("Chicago", "New York")
-#' df <- getDemographics(cities, radius)
+#' df <- getCensus(cities, radius)
 #' head(df)
 #' @export
 #'
 
-getDemographics <- function(cities, radius) {
+getCensus <- function(cities, radius) {
     geo <- ggmap::geocode(cities)
     lat_lon <- data.frame(cbind(cities, geo$lon, geo$lat))
     names(lat_lon)[2] <- "lon"
@@ -66,5 +66,5 @@ getDemographics <- function(cities, radius) {
 ### Example ###
 #radius <- 2
 #cities <- c("Chicago", "New York")
-#df <- getDemographics(cities, radius)
+#df <- getCensus(cities, radius)
 #head(df)
