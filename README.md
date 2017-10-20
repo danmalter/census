@@ -26,7 +26,7 @@ library(censusR)
 
 # City level data for Chicago and New York
 radius <- 2
-cities <- c("Chicago", "New York")
+cities <- c("Chicago, IL", "New York") # note: state is not needed, but can result in incorrect information if city name is in multiple states
 df <- getDemographics(cities, radius)
 df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)]
 
