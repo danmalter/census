@@ -43,7 +43,7 @@ radius <- 2
 cities <- read_csv("~/path/to/file.csv")
 cities <- c(as.character(cities$City_State))
 df <- getDemographics(cities, radius)
-head()
+head(df)
 ```
 
 ## Disclaimer
