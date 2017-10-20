@@ -19,14 +19,14 @@ devtools::install_github("danmalter/censusR")
 
 ## Usage examples
 
-Get demographic data for the cities of Chicago and New York. This example only shows some of the over 500 features available.
+Get demographic data for the cities of Chicago and New York. This example only shows some of the over 500 features available.  Note that the state is not needed in `getCensus`, but it can run into problems if the city name appears in multiple states.
 
 ```R
 library(censusR)
 
 # City level data for Chicago and New York
 radius <- 2
-cities <- c("Chicago, IL", "New York") # note: state is not needed, but can result in incorrect information if city name is in multiple states
+cities <- c("Chicago, IL", "New York")
 df <- getCensus(cities, radius)
 df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)]
 
