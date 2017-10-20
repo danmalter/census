@@ -34,7 +34,7 @@ getDemographics(cities, radius)
 #>      NewYork  2        -74.0059728   40.7127753    428,961     14.17597    8.45      40.718644   -73.996229
 ```
 
-If loading from city and state information from a csv file.  
+If loading city and state information from a csv file, you can just call that column into a list.
 
 ```R
 radius <- 2
