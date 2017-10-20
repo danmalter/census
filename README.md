@@ -2,7 +2,7 @@
 
 [![Build Status]()]() [![CRAN Badge]()]()
 
-`censusR` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. 
+`censusR` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race.  Cities and towns must have a population of 5,000 or more.
 
 `censusR` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.  Google Maps allows for 2500 free requests per day.  If running the same city too often, the Google Maps API may ignore that particular request.
 
