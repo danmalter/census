@@ -8,7 +8,7 @@
 #' @importFrom ggmap geocode
 #' @examples
 #' radius <- 2
-#' cities <- c("Chicago", "New York")
+#' cities <- c("Boston", "Los Angeles")
 #' df <- getCensus(cities, radius)
 #' head(df)
 #' @export
