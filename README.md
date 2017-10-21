@@ -1,6 +1,6 @@
 # censusR
 
-[![Build Status]()]() [![CRAN Badge]()]()
+[![Build Status](https://travis-ci.org/danmalter/censusR)](https://travis-ci.org/danmalter/censusR.svg?branch=master)
 
 `censusR` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race.  Cities and towns must have a population of 5,000 or more.  An example of the data being collected from Missouri Census Data Center can be seen [here](http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&SERVICE=appdev&sitename=Chicago,IL&longitude=-87.6297982&latitude=41.8781136&radii=2&dprofile=on&eprofile=on&sprofile=on&hprofile=on&cntypops=on&printdetail=on&_debug=).
 
