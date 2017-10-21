@@ -46,5 +46,11 @@ df <- getCensus(cities, radius)
 head(df)
 ```
 
+To view Google Maps API usage limit. The below function is from the ggmaps package.
+
+```R
+geocodeQueryCheck() 
+```
+
 ## Disclaimer
 This product uses the Google Maps API and collects data from the Missouri Census Data Center, but is not endorsed or certified by Google or the Missouri Census Data Center.
