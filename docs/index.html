@@ -74,11 +74,13 @@
 
 <p><code>censusR</code> is a package for getting data from the <a href="http://mcdc.missouri.edu/">Missouri Census Data Center</a>. As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. Cities and towns must have a population of 5,000 or more. An example of the data being collected from Missouri Census Data Center can be seen <a href="http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago,IL&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=">here</a>.</p>
 <p><code>censusR</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2500 free requests per day. If running the same city too often, the Google Maps API may ignore that particular request.</p>
-<p>For more details, see <a href="">Getting started with censusR</a> and the package’s <a href="https://danmalter.github.io/censusR/">website</a>.</p>
+<p>For more details, see <a href="https://danmalter.github.io/censusR/articles/getting-started.html">Getting started with censusR</a> and the package’s <a href="https://danmalter.github.io/censusR/">website</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install the latest development version of <code>censusR</code> from Github using <code>devtools</code>: <code>R # install.packages("devtools") devtools::install_github("danmalter/censusR")</code></p>
+<p>Install the latest development version of <code>censusR</code> from Github using <code>devtools</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+devtools::<span class="kw">install_github</span>(<span class="st">"danmalter/censusR"</span>)</code></pre></div>
 </div>
 <div id="usage-examples" class="section level2">
 <h2 class="hasAnchor">

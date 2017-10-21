@@ -11,7 +11,7 @@ For more details, see [Getting started with censusR](https://danmalter.github.io
 ## Installation
 
 Install the latest development version of `censusR` from Github using `devtools`:
-  ```R
+```R
 # install.packages("devtools")
 devtools::install_github("danmalter/censusR")
 ```
