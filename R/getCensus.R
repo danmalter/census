@@ -15,17 +15,16 @@
 #'
 
 getCensus <- function(cities, radius) {
-    geo <- ggmap::geocode(cities)
-    lat_lon <- data.frame(cbind(cities, geo$lon, geo$lat))
+    geo <- ggmap::geocode(cities, output='more')
+    lat_lon <- geo[,c("locality", "lon", "lat")]
     names(lat_lon)[2] <- "lon"
     names(lat_lon)[3] <- "lat"
 
     # Remove spaces between city names.  Example "New York" to "NewYork".
-    cities.lst <- list(lat_lon$cities)
+    cities.lst <- list(lat_lon$locality)
     for (i in 1:length(cities.lst)){
       cities.lst <- gsub("[[:space:]]", "", cities.lst[[i]])
     }
-
 
     lon.lst <- unlist(as.character(lat_lon$lon))
     lat.lst <- unlist(as.character(lat_lon$lat))

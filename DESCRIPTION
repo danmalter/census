@@ -11,8 +11,11 @@ BugReports: https://github.com/danmalter/census/issues
 Depends:
   R (>= 3.1.0),
   ggmap,
-  RCurl,
-  devtools
+  RCurl
+Suggests:
+    knitr,
+    rmarkdown,
+    ggplot2
 License: MIT
 Encoding: UTF-8
 LazyData: true
