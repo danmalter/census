@@ -38,9 +38,8 @@ df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)]
 If loading city and state information from a csv file, you can just call that column into a list.
 
 ```R
-library(readr)
 radius <- 2
-cities <- read_csv("~/path/to/file.csv")
+cities <- read.csv("~/path/to/file.csv")
 cities <- c(as.character(cities$City_State))
 df <- getCensus(cities, radius)
 head(df)
