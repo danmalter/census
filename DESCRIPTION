@@ -2,11 +2,13 @@ Package: censusR
 Type: Package
 Title: Scrape US Census Data
 Version: 0.1.0
-Authors@R: Danny Malter
+Authors@R: person("Danny", "Malter", email = "danmaltert@gmail.com",
+                  role = c("aut", "cre"))
 Maintainer: The package maintainer <danmalter@gmail.com>
 Description: This package allows for the ability to input city and state information and output demographic data from the Missouri Census Data Center.
+URL: https://github.com/danmalter/censusR
 Depends:
-  R (>= 3.1.0),
+  R (>= 3.0.0),
   ggmap,
   RCurl
 License: MIT
