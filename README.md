@@ -53,7 +53,7 @@ geocodeQueryCheck()
 ```
 
 ## Report an issue
-If you having issues using, installing, and/or have a question about pitchRx, please post a [new issue](https://github.com/danmalter/censusR/issues)
+If you having issues using, installing, and/or have a question about censusR, please post a [new issue](https://github.com/danmalter/censusR/issues)
 
 ## Disclaimer
 This product uses the Google Maps API and collects data from the Missouri Census Data Center, but is not endorsed or certified by Google or the Missouri Census Data Center.
