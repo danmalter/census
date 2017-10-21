@@ -6,7 +6,7 @@
 
 `censusR` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.  Google Maps allows for 2500 free requests per day.  If running the same city too often, the Google Maps API may ignore that particular request.
 
-For more details, see [Getting started with censusR]() and the package's [website]().
+For more details, see [Getting started with censusR]() and the package's [website](https://danmalter.github.io/censusR/).
 
 ## Installation
 
