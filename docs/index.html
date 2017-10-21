@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scrape US Census Data • censusR</title>
+<title>Scrape US Census Data • census</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
@@ -24,7 +24,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">censusR</a>
+      <a class="navbar-brand" href="index.html">census</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -52,7 +52,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/danmalter/censusR">
+  <a href="https://github.com/danmalter/census">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -68,25 +68,25 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    <div id="censusr" class="section level1">
+    <div id="census" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#censusr" class="anchor"></a>censusR</h1></div>
+<a href="#census" class="anchor"></a>census</h1></div>
 
-<p><code>censusR</code> is a package for getting data from the <a href="http://mcdc.missouri.edu/">Missouri Census Data Center</a>. As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. Cities and towns must have a population of 5,000 or more. An example of the data being collected from Missouri Census Data Center can be seen <a href="http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago,IL&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=">here</a>.</p>
-<p><code>censusR</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2500 free requests per day. If running the same city too often, the Google Maps API may ignore that particular request.</p>
-<p>For more details, see <a href="https://danmalter.github.io/censusR/articles/getting-started.html">Getting started with censusR</a> and the package’s <a href="https://danmalter.github.io/censusR/">website</a>.</p>
+<p><code>census</code> is a package for getting data from the <a href="http://mcdc.missouri.edu/">Missouri Census Data Center</a>. As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. Cities and towns must have a population of 5,000 or more. An example of the data being collected from Missouri Census Data Center can be seen <a href="http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago,IL&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=">here</a>.</p>
+<p><code>census</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2500 free requests per day. If running the same city too often, the Google Maps API may ignore that particular request.</p>
+<p>For more details, see <a href="https://danmalter.github.io/census/articles/getting-started.html">Getting started with census</a> and the package’s <a href="https://danmalter.github.io/census/">website</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Install the latest development version of <code>censusR</code> from Github using <code>devtools</code>:</p>
+<p>Install the latest development version of <code>census</code> from Github using <code>devtools</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools::<span class="kw">install_github</span>(<span class="st">"danmalter/censusR"</span>)</code></pre></div>
+devtools::<span class="kw">install_github</span>(<span class="st">"danmalter/census"</span>)</code></pre></div>
 </div>
 <div id="usage-examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage-examples" class="anchor"></a>Usage examples</h2>
 <p>Get demographic data for the cities of Chicago and New York. This example only shows some of the over 500 features available. Note that the state is not needed in <code><a href="reference/getCensus.html">getCensus()</a></code>, but it can run into problems if the city name appears in multiple states.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(censusR)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(census)
 
 <span class="co"># City level data for Chicago and New York</span>
 radius &lt;-<span class="st"> </span><span class="dv">2</span>
@@ -110,7 +110,7 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.h
 <div id="report-an-issue" class="section level2">
 <h2 class="hasAnchor">
 <a href="#report-an-issue" class="anchor"></a>Report an issue</h2>
-<p>If you having issues using, installing, and/or have a question about pitchRx, please post a <a href="https://github.com/danmalter/censusR/issues">new issue</a></p>
+<p>If you having issues using, installing, and/or have a question about census, please post a <a href="https://github.com/danmalter/census/issues">new issue</a></p>
 </div>
 <div id="disclaimer" class="section level2">
 <h2 class="hasAnchor">
@@ -123,9 +123,9 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.h
   <div class="col-md-3" id="sidebar">
     <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/danmalter/censusR">https://​github.com/​danmalter/​censusR</a>
+<li>Browse source code at <br><a href="https://github.com/danmalter/census">https://​github.com/​danmalter/​census</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/danmalter/censusR/issues">https://​github.com/​danmalter/​censusR/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/danmalter/census/issues">https://​github.com/​danmalter/​census/​issues</a>
 </li>
 </ul>
 <h2>License</h2>
@@ -136,7 +136,7 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.h
 </ul>
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/danmalter/censusR"><img src="https://travis-ci.org/danmalter/censusR.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://travis-ci.org/danmalter/census"><img src="https://travis-ci.org/danmalter/census.svg?branch=master" alt="Build Status"></a></li>
 </ul>
 </div>
 </div>

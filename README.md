@@ -1,19 +1,19 @@
-# censusR
+# census
 
-[![Build Status](https://travis-ci.org/danmalter/censusR.svg?branch=master)](https://travis-ci.org/danmalter/censusR)
+[![Build Status](https://travis-ci.org/danmalter/census.svg?branch=master)](https://travis-ci.org/danmalter/census)
 
-`censusR` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race.  Cities and towns must have a population of 5,000 or more.  An example of the data being collected from Missouri Census Data Center can be seen [here](http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&SERVICE=appdev&sitename=Chicago,IL&longitude=-87.6297982&latitude=41.8781136&radii=2&dprofile=on&eprofile=on&sprofile=on&hprofile=on&cntypops=on&printdetail=on&_debug=).
+`census` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race.  Cities and towns must have a population of 5,000 or more.  An example of the data being collected from Missouri Census Data Center can be seen [here](http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&SERVICE=appdev&sitename=Chicago,IL&longitude=-87.6297982&latitude=41.8781136&radii=2&dprofile=on&eprofile=on&sprofile=on&hprofile=on&cntypops=on&printdetail=on&_debug=).
 
-`censusR` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.  Google Maps allows for 2500 free requests per day.  If running the same city too often, the Google Maps API may ignore that particular request.
+`census` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.  Google Maps allows for 2500 free requests per day.  If running the same city too often, the Google Maps API may ignore that particular request.
 
-For more details, see [Getting started with censusR](https://danmalter.github.io/censusR/articles/getting-started.html) and the package's [website](https://danmalter.github.io/censusR/).
+For more details, see [Getting started with census](https://danmalter.github.io/census/articles/getting-started.html) and the package's [website](https://danmalter.github.io/census/).
 
 ## Installation
 
-Install the latest development version of `censusR` from Github using `devtools`:
+Install the latest development version of `census` from Github using `devtools`:
 ```R
 # install.packages("devtools")
-devtools::install_github("danmalter/censusR")
+devtools::install_github("danmalter/census")
 ```
 
 
@@ -22,7 +22,7 @@ devtools::install_github("danmalter/censusR")
 Get demographic data for the cities of Chicago and New York. This example only shows some of the over 500 features available.  Note that the state is not needed in `getCensus()`, but it can run into problems if the city name appears in multiple states.
 
 ```R
-library(censusR)
+library(census)
 
 # City level data for Chicago and New York
 radius <- 2
@@ -53,7 +53,7 @@ geocodeQueryCheck()
 ```
 
 ## Report an issue
-If you having issues using, installing, and/or have a question about censusR, please post a [new issue](https://github.com/danmalter/censusR/issues)
+If you having issues using, installing, and/or have a question about census, please post a [new issue](https://github.com/danmalter/census/issues)
 
 ## Disclaimer
 This product uses the Google Maps API and collects data from the Missouri Census Data Center, but is not endorsed or certified by Google or the Missouri Census Data Center.
