@@ -6,6 +6,7 @@
 #' @return Data frame containing demographic data
 #' @importFrom RCurl getURL
 #' @importFrom ggmap geocode
+#' @importFrom utils read.csv
 #' @examples
 #' radius <- 2
 #' cities <- c("Boston", "Los Angeles")
