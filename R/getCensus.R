@@ -9,7 +9,7 @@
 #' @importFrom utils read.csv
 #' @examples
 #' radius <- 2
-#' cities <- c("Chicago", "New York")
+#' cities <- c("Los Angelas", "Dallas")
 #' df <- getCensus(cities, radius)
 #' head(df)
 #' @export
