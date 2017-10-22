@@ -1,11 +1,14 @@
-Package: census
 Type: Package
+Package: census
 Title: Scrape US Census Data
 Version: 0.1.0
 Authors@R: person("Danny", "Malter", email = "danmalter@gmail.com",
                   role = c("aut", "cre"))
 Maintainer: Danny Malter <danmalter@gmail.com>
-Description: This package allows for the ability to input city and state information and output demographic data from the Missouri Census Data Center.
+Description: A scraper to collect US Census data from the American Community Survey (ACS) data
+  and metadata. Available datasets include population, income, education and employment levels by 
+  age, sex and race. See <http://mcdc.missouri.edu/websas/caps10acsb.html> for more information.  
+  Unlike other census related packages, this package does not require a U.S. Census Bureau API.
 URL: https://github.com/danmalter/census
 BugReports: https://github.com/danmalter/census/issues
 Depends:
