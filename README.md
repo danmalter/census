@@ -1,6 +1,6 @@
 # census
 
-[![Build Status](https://travis-ci.org/danmalter/census.svg?branch=master)](https://travis-ci.org/danmalter/census)
+[![Build Status](https://travis-ci.org/danmalter/census.svg?branch=master)](https://travis-ci.org/danmalter/census) [![CRAN Badge](https://www.r-pkg.org/badges/version/census)](https://cran.r-project.org/package=census)
 
 `census` is a package for getting data from the [Missouri Census Data Center](http://mcdc.missouri.edu/). As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race.  Cities and towns must have a population of 5,000 or more.  An example of the data being collected from Missouri Census Data Center can be seen [here](http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&SERVICE=appdev&sitename=Chicago,IL&longitude=-87.6297982&latitude=41.8781136&radii=2&dprofile=on&eprofile=on&sprofile=on&hprofile=on&cntypops=on&printdetail=on&_debug=).
 
@@ -9,6 +9,12 @@
 For more details, see [Getting started with census](https://danmalter.github.io/census/articles/getting-started.html) and the package's [website](https://danmalter.github.io/census/).
 
 ## Installation
+
+Get the latest stable release from CRAN:
+
+```R
+install.packages("censusapi")
+```
 
 Install the latest development version of `census` from Github using `devtools`:
 ```R
