@@ -29,7 +29,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -76,6 +76,11 @@
     
     
 <div class="contents">
+<div id="using-getcensus" class="section level2">
+<h2 class="hasAnchor">
+<a href="#using-getcensus" class="anchor"></a>Using <code>getCensus</code>
+</h2>
+<p>Below we will collect census data for the US cities of Chicago and New York. Our radius will be the boundary around the coordinates of the city and the getCensus function will output out census data for each city in the given boundary.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(census)
 
 <span class="co"># City level data for Chicago and New York</span>
@@ -83,6 +88,13 @@ radius &lt;-<span class="st"> </span><span class="dv">2</span>
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Chicago, IL"</span>, <span class="st">"New York"</span>)
 df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getCensus.html">getCensus</a></span>(cities, radius)
 df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">55</span>,<span class="dv">59</span>,<span class="dv">164</span>,<span class="dv">252</span>,<span class="dv">254</span>,<span class="dv">305</span>,<span class="dv">336</span>,<span class="dv">477</span>)]</code></pre></div>
+<pre><code>##   sitename radius  TotPop pctMales pctFemales AvgFamInc pctPrivWageWorkers
+## 1  Chicago      2 188,040     48.0       52.0  $192,455               86.7
+## 2 New York      2 444,373     49.2       50.8  $189,738               84.9
+##   pctGovWorkers pctMarried pctBachelors MedianHValue
+## 1           9.0       35.3         38.9     $430,285
+## 2           7.2       35.5         36.4     $1009199</code></pre>
+</div>
 <div id="additional-resources" class="section level2">
 <h2 class="hasAnchor">
 <a href="#additional-resources" class="anchor"></a>Additional resources</h2>
@@ -103,7 +115,8 @@ df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#additional-resources">Additional resources</a></li>
+<li><a href="#using-getcensus">Using <code>getCensus</code></a></li>
+      <li><a href="#additional-resources">Additional resources</a></li>
       <li><a href="#disclaimer">Disclaimer</a></li>
       </ul>
 </div>

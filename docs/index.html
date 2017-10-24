@@ -29,7 +29,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="/index.html">
+  <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -78,6 +78,8 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<p>Get the latest stable release from CRAN:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">"census"</span>)</code></pre></div>
 <p>Install the latest development version of <code>census</code> from Github using <code>devtools</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
 devtools::<span class="kw">install_github</span>(<span class="st">"danmalter/census"</span>)</code></pre></div>
@@ -98,9 +100,8 @@ df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span
 <span class="co">#&gt;  Chicago   2       188,040   48.0     52.0       $192,455    86.7                9.0           35.3       38.9         $430,285</span>
 <span class="co">#&gt;  NewYork   2       444,373   49.2     50.8       $189,738    84.9                7.2           35.5       36.4         $1009199</span></code></pre></div>
 <p>If loading city and state information from a csv file, you can just call that column into a list.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
-radius &lt;-<span class="st"> </span><span class="dv">2</span>
-cities &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/readr/topics/read_delim">read_csv</a></span>(<span class="st">"~/path/to/file.csv"</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="dv">2</span>
+cities &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">"~/path/to/file.csv"</span>)
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">as.character</span>(cities$City_State))
 df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.html">getCensus</a></span>(cities, radius)
 <span class="kw">head</span>(df)</code></pre></div>
@@ -123,13 +124,15 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.h
   <div class="col-md-3" id="sidebar">
     <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cran.r-project.org/package=census">https://​cran.r-project.org/​package=census</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/danmalter/census">https://​github.com/​danmalter/​census</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/danmalter/census/issues">https://​github.com/​danmalter/​census/​issues</a>
 </li>
 </ul>
 <h2>License</h2>
-<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a></p>
+<p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE.html">LICENSE</a></p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Danny Malter <br><small class="roles"> Author, maintainer </small> </li>
@@ -137,6 +140,7 @@ df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.h
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/danmalter/census"><img src="https://travis-ci.org/danmalter/census.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://cran.r-project.org/package=census"><img src="https://www.r-pkg.org/badges/version/census" alt="CRAN Badge"></a></li>
 </ul>
 </div>
 </div>

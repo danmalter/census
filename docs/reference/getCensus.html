@@ -52,7 +52,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -120,201 +120,268 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>radius</span> <span class='kw'>&lt;-</span> <span class='fl'>2</span>
+    <pre class="examples"><div class='input'><span class='no'>radius</span> <span class='kw'>&lt;-</span> <span class='fl'>5</span>
 <span class='no'>cities</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='st'>"Boston"</span>, <span class='st'>"Los Angeles"</span>)
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>getCensus</span>(<span class='no'>cities</span>, <span class='no'>radius</span>)</div><div class='output co'>#&gt; <span class='message'>Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Boston&amp;sensor=false</span></div><div class='output co'>#&gt; <span class='message'>Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Los%20Angeles&amp;sensor=false</span></div><div class='output co'>#&gt; [[1]]
-#&gt; [1] "http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Boston&amp;longitude=-71.0588801&amp;latitude=42.3600825&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug="
-#&gt; 
-#&gt; [[2]]
-#&gt; [1] "http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=LosAngeles&amp;longitude=-118.2436849&amp;latitude=34.0522342&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug="
-#&gt; </div><div class='input'><span class='fu'>head</span>(<span class='no'>df</span>)</div><div class='output co'>#&gt;     sitename radius    Longitude   Latitude TotPopSF1 AreaSQMI LandSQMI
-#&gt; 1     Boston      2  -71.0588801 42.3600825   175,111 10.93563     8.74
-#&gt;    IntPtLat    IntPtLon vintage period  TotPop Age0_4 pctAge0_4 Age5_9
-#&gt; 1 42.358199  -71.063640    2015    5yr 188,658  9,654       5.1  5,962
-#&gt;   pctAge5_9 Age10_14 pctAge10_14 Age15_19 pctAge15_19 Age20_24 pctAge20_24
-#&gt; 1       3.2    5,020         2.7   10,070         5.3   19,258        10.2
-#&gt;   Age25_34 pctAge25_34 Age35_44 pctAge35_44 Age45_54 pctAge45_54 Age55_59
-#&gt; 1   55,847        29.6   25,497        13.5   19,754        10.5    9,238
-#&gt;   pctAge55_59 Age60_64 pctAge60_64 Age65_74 pctAge65_74 Age75_84 pctAge75_84
-#&gt; 1         4.9    7,950         4.2   11,427         6.1    6,247         3.3
-#&gt;   Over85 pctOver85 MedianAge  Over15 pctOver15 Under18 pctUnder18  Over18
-#&gt; 1  2,734       1.4      33.5 168,022      89.1  23,492       12.5 165,166
-#&gt;   pctOver18  Over21 pctOver21  Over25 pctOver25 Over62 pctOver62 Over65
-#&gt; 1      87.5 154,034      81.6 138,694      73.5 25,320      13.4 20,408
-#&gt;   pctOver65  Males pctMales Over65Males pctOver65Males Females pctFemales
-#&gt; 1      10.8 94,297     50.0       9,093            9.6  94,361       50.0
-#&gt;   Over65Females pctOver65Females OneRace pctOneRace  White1 pctWhite1 Black1
-#&gt; 1        11,315             12.0 175,446       93.0 131,740      69.8 12,875
-#&gt;   pctBlack1 Indian1 pctIndian1 Asian1 pctAsian1 HawnPI1 pctHawnPI1 Other1
-#&gt; 1       6.8     541        0.3 23,291      12.3      24        0.0  6,975
-#&gt;   pctOther1 MultiRace pctMultiRace  White2 pctWhite2 Black2 pctBlack2 Indian2
-#&gt; 1       3.7    13,212          7.0 143,961      76.3 22,538      11.9   1,450
-#&gt;   pctIndian2 Asian2 pctAsian2 HawnPI2 pctHawnPI2 Other2 pctOther2 HispanicPop
-#&gt; 1        0.8 25,423      13.5     590        0.3  8,445       4.5      35,320
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>getCensus</span>(<span class='no'>cities</span>, <span class='no'>radius</span>)</div><div class='output co'>#&gt; <span class='message'>Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Boston&amp;sensor=false</span></div><div class='output co'>#&gt; <span class='message'>Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Los%20Angeles&amp;sensor=false</span></div><div class='input'><span class='fu'>head</span>(<span class='no'>df</span>)</div><div class='output co'>#&gt;      sitename radius    Longitude   Latitude  IntPtLat    IntPtLon LandSQMI
+#&gt; 1      Boston      5  -71.0588801 42.3600825 42.361284  -71.079490    60.93
+#&gt;   AreaSQMI TotPopsf1 vintage period    TotPop Age0_4 pctAge0_4 Age5_9 pctAge5_9
+#&gt; 1    71.55   889,685    2015    5yr   924,825 49,583       5.4 38,604       4.2
+#&gt;   Age10_14 pctAge10_14 Age15_19 pctAge15_19 Age20_24 pctAge20_24 Age25_34
+#&gt; 1   36,005         3.9   63,638         6.9  110,324        11.9  224,856
+#&gt;   pctAge25_34 Age35_44 pctAge35_44 Age45_54 pctAge45_54 Age55_59 pctAge55_59
+#&gt; 1        24.3  118,911        12.9   99,436        10.8   45,281         4.9
+#&gt;   Age60_64 pctAge60_64 Age65_74 pctAge65_74 Age75_84 pctAge75_84 Over85
+#&gt; 1   40,181         4.3   54,130         5.9   29,803         3.2 14,073
+#&gt;   pctOver85 MedianAge     Over5 pctOver5  Over15 pctOver15 Under18 pctUnder18
+#&gt; 1       1.5      32.6   875,242     94.6 800,633      86.6 146,803       15.9
+#&gt;    Over18 pctOver18  Over21 pctOver21  Over25 pctOver25  Over62 pctOver62
+#&gt; 1 778,022      84.1 710,782      76.9 626,671      67.8 121,671      13.2
+#&gt;    Over65 pctOver65   Males pctMales Over18Males pctOver18Males Over65Males
+#&gt; 1  98,006      10.6 448,563     48.5     374,458           83.5      40,285
+#&gt;   pctOver65Males Females pctFemales Over18Females pctOver18Females
+#&gt; 1            9.0 476,262       51.5       403,564             84.7
+#&gt;   Over65Females pctOver65Females   OneRace pctOneRace  White1 pctWhite1  Black1
+#&gt; 1        57,721             12.1   873,080       94.4 571,518      61.8 139,878
+#&gt;   pctBlack1 Indian1 pctIndian1  Asian1 pctAsian1 HawnPI1 pctHawnPI1  Other1
+#&gt; 1      15.1   2,432        0.3 103,370      11.2     233        0.0  55,649
+#&gt;   pctOther1 MultiRace pctMultiRace  White2 pctWhite2  Black2 pctBlack2 Indian2
+#&gt; 1       6.0    51,745          5.6 618,302      66.9 174,387      18.9   7,053
+#&gt;   pctIndian2  Asian2 pctAsian2 HawnPI2 pctHawnPI2  Other2 pctOther2 HispanicPop
+#&gt; 1        0.8 113,981      12.3   1,419        0.2  63,571       6.9     166,293
 #&gt;   pctHispanicPop NonHispPop pctNonHispPop NonHispWhite pctNonHispWhite
-#&gt; 1           18.7    153,338          81.3      113,130            60.0
+#&gt; 1           18.0    758,532          82.0      494,169            53.4
 #&gt;   NonHispBlack pctNonHispBlack NonHispAmInd pctNonHispAmInd NonHispAsian
-#&gt; 1       11,508             6.1          195             0.1       23,174
-#&gt;   pctNonHispAsian NonHispHawnPI pctNonHispHawnPI TotHHs HHInc0 pctHHInc0
-#&gt; 1            12.3            24              0.0 87,490  9,267      10.6
+#&gt; 1      126,526            13.7        1,201             0.1      102,739
+#&gt;   pctNonHispAsian NonHispHawnPI pctNonHispHawnPI  TotHHs HHInc0 pctHHInc0
+#&gt; 1            11.1           186              0.0 368,235 39,104      10.6
 #&gt;   HHInc10 pctHHInc10 HHInc15 pctHHInc15 HHInc25 pctHHInc25 HHInc35 pctHHInc35
-#&gt; 1   5,117        5.8   6,631        7.6   5,233        6.0   7,141        8.2
+#&gt; 1  23,794        6.5  31,755        8.6  26,514        7.2  37,869       10.3
 #&gt;   HHInc50 pctHHInc50 HHInc75 pctHHInc75 HHInc100 pctHHInc100 HHInc150
-#&gt; 1  11,155       12.8   8,746       10.0   13,730        15.7    7,565
+#&gt; 1  55,999       15.2  40,355       11.0   55,411        15.0   24,949
 #&gt;   pctHHInc150 HHInc200 pctHHInc200 NumHHEarnings pctNumHHEarnings NumHHSocSec
-#&gt; 1         8.6   12,905        14.8        71,329             81.5      14,817
+#&gt; 1         6.8   32,485         8.8       294,935             80.1      74,050
 #&gt;   pctNumHHSocSec NumHHRetInc pctNumHHRetInc NumHHSuppSecInc pctNumHHSuppSecInc
-#&gt; 1           16.9       5,959            6.8           4,945                5.7
-#&gt;   NumHHPubAssist pctNumHHPubAssist MedianHHInc AvgHHInc AvgHHEarnings
-#&gt; 1          2,259               2.6     $83,486 $116,894      $124,863
-#&gt;   AvgHHSocSec AvgHHRetInc AvgHHSuppSecInc AvgHHPubAssist FamHHs pctFamHHs
-#&gt; 1     $15,865     $31,835          $8,965         $3,620 33,192      37.9
-#&gt;   FamHHInc0 pctFamHHInc0 FamHHInc10 pctFamHHInc10 FamHHInc15 pctFamHHInc15
-#&gt; 1     1,965          5.9      1,176           3.5      2,829           8.5
-#&gt;   FamHHInc25 pctFamHHInc25 FamHHInc35 pctFamHHInc35 FamHHInc50 pctFamHHInc50
-#&gt; 1      2,419           7.3      3,029           9.1      3,388          10.2
-#&gt;   FamHHInc75 pctFamHHInc75 FamHHInc100 pctFamHHInc100 FamHHInc150
-#&gt; 1      2,903           8.7       4,845           14.6       3,186
-#&gt;   pctFamHHInc150 FamHHInc200 pctFamHHInc200 AvgFamInc     PCI NonFamHHs
-#&gt; 1            9.6       7,452           22.4  $151,293 $56,254    54,298
-#&gt;   pctNonFamHHs MedianNonFamInc AvgNonFamInc PovUniverseFamilyPop PoorInFamily
-#&gt; 1         62.1         $74,360      $94,348               95,288       13,677
-#&gt;   pctPoorInFamily PoorFamilies pctPoorFamilies PovRatioUnderHalf
-#&gt; 1            14.4        4,254            12.8            16,664
-#&gt;   PovRatiov5tov99 PovRatio1to2 PovRatioOver2  Over16 LaborForce pctLaborForce
-#&gt; 1          16,922       26,595       118,181 167,276    120,047         10959
-#&gt;   CivLabForce pctCivLabForce EmployedCLF pctEmployedCLF UnemployedCLF
-#&gt; 1     119,791          10936     112,422          14277         7,369
-#&gt;   pctUnemployedCLF Military pctMilitary NotInLF pctNotInLF OwnKidsUnder6
-#&gt; 1             1023      256        22.7  47,229       4341        10,653
-#&gt;   OwnKidsU6AllPrntsWk pctOwnKidsU6AllPrntsWk OwnKidsOver6 OwnKidsO6AllPrntsWk
-#&gt; 1               7,452                   70.0       11,814               8,437
-#&gt;   pctOwnKidsO6AllPrntsWk Worker16 Commuters pctCommuters DriveAlone
-#&gt; 1                   71.4  110,448   105,569         95.6     29,192
-#&gt;   pctDriveAlone Carpool pctCarpool PublicTrans pctPublicTrans WalkToWork
-#&gt; 1          26.4   4,979        4.5      35,938           32.5     31,658
-#&gt;   pctWalkToWork OtherCommute pctOtherCommute WorkAtHome pctWorkAtHome
-#&gt; 1          28.7        3,802             3.4      4,879           4.4
-#&gt;   ManProfOccs pctManProfOccs ServiceOccs pctServiceOccs SalesOffOccs
-#&gt; 1      66,381           59.0      18,587           16.5       19,296
-#&gt;   pctSalesOffOccs FarmFishOccs pctFarmFishOccs ConsOccs pctConsOccs TransOccs
-#&gt; 1            17.2          175             0.2    2,863         2.5     5,120
-#&gt;   pctTransOccs Agriculture pctAgriculture Construction pctConstruction
-#&gt; 1          4.6         166            0.1        2,774             2.5
-#&gt;   Manufacturing pctManufacturing WholesaleTrade pctWholesaleTrade RetailTrade
-#&gt; 1         5,837              5.2          2,096               1.9       6,406
-#&gt;   pctRetailTrade Transportation pctTransportation Information pctInformation
-#&gt; 1            5.7          2,361               2.1       3,187            2.8
-#&gt;   Finance_Ins pctFinance_Ins Professional pctProfessional Educ_Health_SocSvcs
-#&gt; 1      15,602           13.9       25,310            22.5              28,484
-#&gt;   pctEduc_Health_SocSvcs RecreationEtc pctRecreationEtc OtherIndustries
-#&gt; 1                   25.3        13,168             11.7           3,850
-#&gt;   pctOtherIndustries PublicAdmin pctPublicAdmin PrivWageWorkers
-#&gt; 1                3.4       3,181            2.8          99,911
-#&gt;   pctPrivWageWorkers GovWorkers pctGovWorkers SelfEmpWorkers pctSelfEmpWorkers
-#&gt; 1               88.9      7,737           6.9          4,665               4.1
-#&gt;   UnpaidFamWorkers pctUnpaidFamWorkers Families pctFamilies FamsWithKids
-#&gt; 1              109                 0.1   33,192        37.9       12,322
-#&gt;   pctFamsWithKids MarriedCouples pctMarriedCouples CouplesWithKids
-#&gt; 1            14.1         23,174              26.5           7,431
+#&gt; 1           20.1      32,392            8.8          24,723                6.7
+#&gt;   NumHHPubAssist pctNumHHPubAssist NumHHFoodStmp pctNumHHFoodStmp MedianHHInc
+#&gt; 1         12,103               3.3        58,978             16.0     $65,170
+#&gt;   AvgHHInc AvgHHEarnings AvgHHSocSec AvgHHRetInc AvgHHSuppSecInc AvgHHPubAssist
+#&gt; 1  $90,171       $96,409     $15,345     $25,427          $9,160         $4,483
+#&gt;    FamHHs pctFamHHs FamHHInc0 pctFamHHInc0 FamHHInc10 pctFamHHInc10 FamHHInc15
+#&gt; 1 173,399      47.1    12,247          7.1      7,393           4.3     14,598
+#&gt;   pctFamHHInc15 FamHHInc25 pctFamHHInc25 FamHHInc35 pctFamHHInc35 FamHHInc50
+#&gt; 1           8.4     13,778           7.9     19,056          11.0     25,692
+#&gt;   pctFamHHInc50 FamHHInc75 pctFamHHInc75 FamHHInc100 pctFamHHInc100 FamHHInc150
+#&gt; 1          14.8     19,227          11.1      27,348           15.8      13,244
+#&gt;   pctFamHHInc150 FamHHInc200 pctFamHHInc200 MedianFamInc AvgFamInc     PCI
+#&gt; 1            7.6      20,816           12.0      $78,456  $105,292 $37,848
+#&gt;   NonFamHHs pctNonFamHHs MedianNonFamInc AvgNonFamInc FullTimeWorkers
+#&gt; 1   194,836         52.9         $53,963      $74,260         335,832
+#&gt;   FullTimeWorkersMale pctFullTimeWorkersMale FullTimeWorkersFemale
+#&gt; 1             184,025                   54.8               151,807
+#&gt;   pctFullTimeWorkersFemale MedianEarnings MedianEarningsMale
+#&gt; 1                     45.2        $38,242            $56,833
+#&gt;   MedianEarningsFemale PovUniverse    Poor pctPoor PovUniverseUnder18
+#&gt; 1              $51,385     864,770 169,657    19.6            145,090
+#&gt;   PoorUnder18 pctPoorUnder18 PovUniverse18_64 Poor18to64 pctPoor18to64
+#&gt; 1      38,739           26.7          624,514    113,828          18.2
+#&gt;   PovUniverseOver65 PoorOver65 pctPoorOver65 PovUniverseFamilyPop
+#&gt; 1            95,166     17,090          18.0              537,983
+#&gt;   pctFamilyPopPoor PovUniverseUnrelated PoorInFamily pctPoorInFamily
+#&gt; 1             62.2              326,787       83,253            15.5
+#&gt;   PoorFamilies pctPoorFamilies PoorUnrelated pctPoorUnrelated PovRatioUnderHalf
+#&gt; 1       25,542            14.7        86,404             26.4            89,812
+#&gt;   pctPovRatioUnderHalf PovRatiov5tov99 pctPovRatiov5tov99 PovRatio1to2
+#&gt; 1                 10.4          79,845                9.2      143,584
+#&gt;   pctPovRatio1to2 PovRatioOver2 pctPovRatioOver2  Over16 LaborForce
+#&gt; 1            16.6       551,529             63.8 793,322    549,737
+#&gt;   pctLaborForce CivLabForce pctCivLabForce EmployedCLF pctEmployedCLF
+#&gt; 1          69.3     549,000           69.2     506,771           92.3
+#&gt;   UnemployedCLF pctUnemployedCLF Military pctMilitary NotInLF pctNotInLF
+#&gt; 1        42,229              7.7      737         0.1 243,585       30.7
+#&gt;   Over16Females pctOver16Females LaborForceFemales pctLaborForceFemales
+#&gt; 1       411,162             51.8           269,847                 34.0
+#&gt;   CivLabForceFemales pctCivLabForceFemales EmployedFemales pctEmployedFemales
+#&gt; 1            269,752                  34.0         249,443               92.5
+#&gt;   OwnKidsUnder6 OwnKidsU6AllPrntsWk pctOwnKidsU6AllPrntsWk OwnKidsOver6
+#&gt; 1        56,670              39,254                   69.3       83,805
+#&gt;   OwnKidsO6AllPrntsWk pctOwnKidsO6AllPrntsWk Worker16 Commuters pctCommuters
+#&gt; 1              61,050                   72.8  496,646   476,790         96.0
+#&gt;   DriveAlone pctDriveAlone Carpool pctCarpool PublicTrans pctPublicTrans
+#&gt; 1    186,116          37.5  32,572        6.6     159,924           32.2
+#&gt;   WalkToWork pctWalkToWork OtherCommute pctOtherCommute WorkAtHome
+#&gt; 1     78,091          15.7       20,087             4.0     19,856
+#&gt;   pctWorkAtHome AvgCommute ManProfOccs pctManProfOccs ServiceOccs
+#&gt; 1           4.0       29.0     256,980           50.7      95,996
+#&gt;   pctServiceOccs SalesOffOccs pctSalesOffOccs FarmFishOccs pctFarmFishOccs
+#&gt; 1           18.9       98,116            19.4          539             0.1
+#&gt;   ConsOccs pctConsOccs TransOccs pctTransOccs Agriculture pctAgriculture
+#&gt; 1   20,622         4.1    34,518          6.8         642            0.1
+#&gt;   Construction pctConstruction Manufacturing pctManufacturing WholesaleTrade
+#&gt; 1       16,954             3.3        27,861              5.5          8,787
+#&gt;   pctWholesaleTrade RetailTrade pctRetailTrade Transportation pctTransportation
+#&gt; 1               1.7      40,180            7.9         16,455               3.2
+#&gt;   Information pctInformation Finance_Ins pctFinance_Ins Professional
+#&gt; 1      13,142            2.6      42,155            8.3       89,224
+#&gt;   pctProfessional Educ_Health_SocSvcs pctEduc_Health_SocSvcs RecreationEtc
+#&gt; 1            17.6             155,952                   30.8        55,596
+#&gt;   pctRecreationEtc OtherIndustries pctOtherIndustries PublicAdmin
+#&gt; 1             11.0          23,329                4.6      16,494
+#&gt;   pctPublicAdmin PrivWageWorkers pctPrivWageWorkers GovWorkers pctGovWorkers
+#&gt; 1            3.3         435,819               86.0     45,828           9.0
+#&gt;   SelfEmpWorkers pctSelfEmpWorkers UnpaidFamWorkers pctUnpaidFamWorkers
+#&gt; 1         24,622               4.9              502                 0.1
+#&gt;   TotPopNonInst NonInstUnder65 pctNonInstUnder65 NotInsuredUnder65
+#&gt; 1       918,300        823,134              89.6            44,210
+#&gt;   pctNotInsuredUnder65 PublicInsuranceUnder65 pctPublicInsuranceUnder65
+#&gt; 1                  5.4                226,767                      27.5
+#&gt;   PrivateInsuranceOnlyUnder65 pctPrivateInsuranceOnlyUnder65 NonInstUnder18
+#&gt; 1                     577,957                           70.2        146,601
+#&gt;   pctNonInstUnder18 NotInsuredUnder18 pctNotInsuredUnder1 Families pctFamilies
+#&gt; 1              16.0             2,406                 0.0  173,399        47.1
+#&gt;   FamsWithKids pctFamsWithKids MarriedCouples pctMarriedCouples CouplesWithKids
+#&gt; 1       76,285            20.7        108,793              29.5          43,778
 #&gt;   pctCouplesWithKids SingleMaleFamilies pctSingleMaleFamilies SingleFathers
-#&gt; 1                8.5              2,731                   3.1           985
+#&gt; 1               11.9             14,590                   4.0         5,317
 #&gt;   pctSingleFathers SingleFemaleFamilies pctSingleFemaleFamilies SingleMothers
-#&gt; 1              1.1                7,287                     8.3         3,906
-#&gt;   pctSingleMothers HHsWithKids pctHHsWithKids HHsWithElders pctHHsWithElders
-#&gt; 1              4.5      13,424           15.3        15,859             18.1
-#&gt;   AvgHHSize AvgFamSize   HHPop pctHHPop FamHHpop pctFamHHpop NonFamHHpop
-#&gt; 1      2.02       2.87 176,397     93.5   98,939        8307      77,458
-#&gt;   pctNonFamHHpop GrpQuarters pctGrpQuarters Householder pctHouseholder Spouse
-#&gt; 1           6893      12,261            6.5      87,490           7759 23,314
-#&gt;   pctSpouse  Child pctChild OtherRelative pctOtherRelative NonRelative
-#&gt; 1      2075 29,254     2319         9,528            782.2      26,811
-#&gt;   pctNonRelative UnmarriedPartner pctUnmarriedPartner UMPartnerHHsPerK
-#&gt; 1           2266            7,111               598.4               81
-#&gt;   NeverMarried pctNeverMarried Married pctMarried Separated pctSeparated
-#&gt; 1       92,560            55.1  54,307       32.3     3,492          2.1
-#&gt;   Widowed pctWidowed Divorced pctDivorced   Over3 EnrolledOver3
-#&gt; 1   5,926        3.5   11,737         7.0 182,507        45,849
-#&gt;   pctEnrolledOver3 InNursery pctInNursery InKindergarten pctInKindergarten
-#&gt; 1             25.1     2,387          5.2          1,614               3.5
-#&gt;   InElementary pctInElementary InHighSchool pctInHighSchool InCollege
-#&gt; 1        8,584            18.7        3,558             7.8    29,706
-#&gt;   pctInCollege LessThan9th pctLessThan9th SomeHighSchool pctSomeHighSchool
-#&gt; 1         64.8      11,450            8.3          7,202               5.2
-#&gt;   HighSchool pctHighSchool SomeCollege pctSomeCollege Associates pctAssociates
-#&gt; 1     19,271          13.9      12,113            8.7      3,807           2.7
-#&gt;   Bachelors pctBachelors GradProf pctGradProf HighSchoolOrMore
-#&gt; 1    42,386         30.6   42,465        30.6          120,042
-#&gt;   pctHighSchoolOrMore Bachelorsormore pctBachelorsormore Civilian pctCivilian
-#&gt; 1                86.6          84,851               61.2  164,910       157.9
-#&gt;   Veteran pctVeteran TotHUs OccHUs pctOccHUs OwnerOcc pctOwnerOcc RenterOcc
-#&gt; 1   5,301        3.2 96,529 87,490      90.6   28,716        32.8    58,774
-#&gt;   pctRenterOcc AvgOwnerHHSize AvgRenterHHSize VacHUs pctVacHUs VacantForSale
-#&gt; 1         67.2           2.01            2.02  9,039       9.4           494
-#&gt;   pctVacantForSale VacantForRent pctVacantForRent VacantSeasonal
-#&gt; 1              5.5         1,720             19.0          2,759
-#&gt;   pctVacantSeasonal TotalOwnerUnits OwnerVacRate TotalRentalUnits RenterVacRate
-#&gt; 1              30.5          29,210          1.7           60,494           2.8
-#&gt;   PersonsInOwnerUnits pctPersonsInOwnerUnits PersonsInRenterUnits
-#&gt; 1              57,764                   30.6              118,633
-#&gt;   pctPersonsInRenterUnits Units1 pctUnits1 Units1Detached pctUnits1Detached
-#&gt; 1                    62.9  7,812       8.1          2,539              32.5
-#&gt;   Units1Attached pctUnits1Attached Units2 pctUnits2 Units3_4 pctUnits3_4
-#&gt; 1          5,273              67.5  6,434       6.7   22,979        23.8
-#&gt;   Units5_9 pctUnits5_9 Units10_19 pctUnits10_19 Units20up pctUnits20up
-#&gt; 1   16,159        16.7      8,072           8.4    34,895         36.1
-#&gt;   MobileHomes pctMobileHomes BoatRV pctBoatRV MobileHomesPerK Built2010orLater
-#&gt; 1          77            0.1    101       0.1               1            1,180
-#&gt;   pctBuilt2010orLater Built2000_2009 pctBuilt2000_2009 Built1990_1999
-#&gt; 1                 1.2         10,499              10.9          3,637
-#&gt;   pctBuilt1990_1999 Built1980_1989 pctBuilt1980_1989 Built1970_1979
-#&gt; 1               3.8          6,562               6.8          8,069
-#&gt;   pctBuilt1970_1979 Built1960_1969 pctBuilt1960_1969 Built1950_1959
-#&gt; 1               8.4          5,557               5.8          3,979
-#&gt;   pctBuilt1950_1959 Built1940_1949 pctBuilt1940_1949 BuiltBefore1940
-#&gt; 1               4.1          3,585               3.7          53,461
-#&gt;   pctBuiltBefore1940 MovedIn2010orLater pctMovedIn2010orLater MovedIn2000_2009
-#&gt; 1               55.4             43,019                  49.2           29,775
-#&gt;   pctMovedIn2000_2009 MovedIn1990_1999 pctMovedIn1990_1999 MovedIn1980_1989
-#&gt; 1                34.0            8,043                 9.2            3,274
-#&gt;   pctMovedIn1980_1989 MovedInBefore1980 pctMovedInBefore1980 NoVehicles
-#&gt; 1                 3.7             3,379                  3.9     38,283
-#&gt;   pctNoVehicles Vehicles1 pctVehicles1 Vehicles2 pctVehicles2 VehiclesGE3
-#&gt; 1          43.8    36,817         42.1    10,798         12.3       1,592
-#&gt;   pctVehiclesGE3 HHFUtilGas pctHHFUtilGas HHFLPGas pctHHFLPGas HHFElectric
-#&gt; 1            1.8     43,030          49.2    1,624         1.9      34,191
-#&gt;   pctHHFElectric HHFKerosene pctHHFKerosene HHFCoal pctHHFCoal HHFWood
-#&gt; 1           39.1       6,850            7.8      19        0.0      67
-#&gt;   pctHHFWood HHFSolar pctHHFSolar HHFOther pctHHFOther HHFNoFuel pctHHFNoFuel
-#&gt; 1        0.1       51         0.1      640         0.7     1,018          1.2
-#&gt;   NoPlumbing pctNoPlumbing NoKitchen pctNoKitchen NoPhone pctNoPhone
-#&gt; 1        327           0.4       601          0.7   2,357        2.7
-#&gt;   PersonsPerRoomLow pctPersonsPerRoomLow PersonsPerRoomMedium
-#&gt; 1            84,291                 96.3                1,862
-#&gt;   pctPersonsPerRoomMedium PersonsPerRoomHigh pctPersonsPerRoomHigh HvalUnder50
-#&gt; 1                     2.1              1,337                   1.5         367
-#&gt;   pctHvalUnder50 Hval50 pctHval50 Hval100 pctHval100 Hval150 pctHval150 Hval200
-#&gt; 1            1.3     80       0.3     355        1.2     485        1.7   2,325
-#&gt;   pctHval200 Hval300 pctHval300 Hval500 pctHval500 HvalOverMillion
-#&gt; 1        8.1   9,402       32.7  10,356       36.1           3,503
-#&gt;   pctHvalOverMillion HvalOver2Million pctHvalOver2Million MedianHValue
-#&gt; 1               12.2            1,843                 6.4     $623,962
-#&gt;   AvgHValue HUsMort pctHUsMort HUsMortOver30Pct pctHUsMortOver30Pct
-#&gt; 1  $813,091  21,155       73.7            6,910                32.7
-#&gt;   MedianOwnerCostsMort HUsNoMort pctHUsNoMort HUsNoMortOver30Pct
-#&gt; 1               $2,704     7,561         26.3              1,872
-#&gt;   pctHUsNoMortOver30Pct MedianOwnerCostsNoMort CashRenter pctCashRenter
-#&gt; 1                  24.8                 $1,143     57,602          98.0
-#&gt;   NoCashRenter pctNoCashRenter MedianGrossRent AvgGrossRent CashRenterOver30Pct
-#&gt; 1        1,172             2.0          $1,582       $1,621              26,339
-#&gt;   pctCashRenterOver30Pct CashRenterOver750 pctCashRenterOver750 Persons_Sampled
-#&gt; 1                   44.8            34,927                 59.4           15277
-#&gt;   PctPersons_Sampled HUs_Sampled PctHUs_Sampled PctOver5 PctOver18Males
-#&gt; 1                8.1        7458            7.7     94.9           87.3
-#&gt;   PctOver18Females PovUniverse  poor Pctpoor PctPovRatioUnderHalf
-#&gt; 1             87.8           0 33586    18.8                  9.3
-#&gt;   PctPovRatiov5tov99 PctPovRatio1to2 PctpovratioOver2
-#&gt; 1                9.5            14.9             66.3
+#&gt; 1              1.4               50,016                    13.6        27,190
+#&gt;   pctSingleMothers LivingAlone pctLivingAlone Over65Alone pctOver65Alone
+#&gt; 1              7.4     134,148           70.0      37,574           19.3
+#&gt;   HHsWithKids pctHHsWithKids HHsWithElders pctHHsWithElders AvgHHSize
+#&gt; 1      83,960           22.8        74,391             20.2      2.33
+#&gt;   AvgFamSize     HHPop pctHHPop FamHHpop pctFamHHpop NonFamHHpop pctNonFamHHpop
+#&gt; 1       3.10   859,058     96.1  558,636        65.0     300,422           35.0
+#&gt;   GrpQuarters pctGrpQuarters Householder pctHouseholder  Spouse pctSpouse
+#&gt; 1      65,767            7.1     368,235           42.9 108,807      12.7
+#&gt;     Child pctChild OtherRelative pctOtherRelative NonRelative pctNonRelative
+#&gt; 1 196,203     22.8        59,574              6.9     126,239           14.7
+#&gt;   UnmarriedPartner pctUnmarriedPartner UMPartnerHHsPerK NeverMarried
+#&gt; 1           28,430                 3.3               77      434,889
+#&gt;   pctNeverMarried Married pctMarried Separated pctSeparated Widowed pctWidowed
+#&gt; 1            54.3 254,708       31.8    19,435          2.4  31,340        3.9
+#&gt;   Divorced pctDivorced Women15to50 UnmarriedWomen15to50 pctUnmarriedWomen15to50
+#&gt; 1   60,261         7.5     293,100              208,750                    71.2
+#&gt;   WomenGivingBirth pctWomenGivingBirth UnmarriedGivingBirth
+#&gt; 1           11,879                 4.0                4,033
+#&gt;   pctUnmarriedGivingBirth Women15to19 pctWomen15to19 Women20to34 pctWomen20to34
+#&gt; 1                    34.0         372            3.1       7,927           66.7
+#&gt;   Women35to50 pctWomen35to50 UnmarriedGivingBirthPerk GivingBirthPerk
+#&gt; 1       3,580           30.1                       19              40
+#&gt;   BirthRate15_19 BirthRate20_34 BirthRate35_50 GrandPrntsLvngWithGrndkid
+#&gt; 1            183             98             87                    14,125
+#&gt;   GrandPrntsCaring pctGrandPrntsCaring GrandPrntsCaringLT1
+#&gt; 1            3,819                27.0                 710
+#&gt;   pctGrandPrntsCaringLT1 GrandPrntsCaring1or2 pctGrandPrntsCaring1or2
+#&gt; 1                   18.6                  940                    24.6
+#&gt;   GrandPrntsCaring3or4 pctGrandPrntsCaring3or4 GrandPrntsCaring5orMore
+#&gt; 1                  620                    16.2                   1,549
+#&gt;   pctGrandPrntsCaring5orMore     Over3 EnrolledOver3 pctEnrolledOver3 InNursery
+#&gt; 1                       40.6   895,081       272,550             30.4    12,168
+#&gt;   pctInNursery InKindergarten pctInKindergarten InElementary pctInElementary
+#&gt; 1          4.5         10,651               3.9       58,463            21.4
+#&gt;   InHighSchool pctInHighSchool InCollege pctInCollege LessThan9th
+#&gt; 1       30,459            11.2   160,809         59.0      49,093
+#&gt;   pctLessThan9th SomeHighSchool pctSomeHighSchool HighSchool pctHighSchool
+#&gt; 1            7.8         38,341               6.1    128,396          20.5
+#&gt;   SomeCollege pctSomeCollege Associates pctAssociates Bachelors pctBachelors
+#&gt; 1      76,058           12.1     25,327           4.0   155,508         24.8
+#&gt;   GradProf pctGradProf HighSchoolOrMore pctHighSchoolOrMore Bachelorsormore
+#&gt; 1  153,948        24.6          539,237                86.0         309,456
+#&gt;   pctBachelorsormore Civilian pctCivilian Veteran pctVeteran Disabled
+#&gt; 1               49.4  777,285        99.9  24,505        3.2   97,674
+#&gt;   pctDisabled DisabledUnder18 pctDisabledUnder18 NonInst18_64 pctNonInst18_64
+#&gt; 1        10.6           6,820                4.7      676,533            73.7
+#&gt;   Disabled18_64 pctDisabled18_64 NonInstOver65 pctNonInstOver65 DisabledElder
+#&gt; 1        54,318              8.0        95,166             10.4        36,536
+#&gt;   pctDisabledElder     Over1 SameHouse pctSameHouse DiffHouse pctDiffHouse
+#&gt; 1             38.4   914,118   718,917         78.7   172,844         18.9
+#&gt;   DiffHouseSameCounty pctDiffHouseSameCounty DiffCounty pctDiffCounty
+#&gt; 1              90,985                   52.6     81,859          47.4
+#&gt;   DiffCntySameState pctDiffCntySameState DiffState pctDiffState LivedAbroad
+#&gt; 1            40,344                 23.3    41,515         24.0      22,357
+#&gt;   pctLivedAbroad USNative pctUSNative BornInUS pctBornInUS BornInCurrState
+#&gt; 1            2.4  652,799        70.6  626,250        95.9         392,364
+#&gt;   pctBornInCurrState BornInDiffState pctBornInDiffState BornAbroad
+#&gt; 1               62.7         233,886               37.3     26,549
+#&gt;   pctBornAbroad ForeignBorn pctForeignBorn Naturalized pctNaturalized
+#&gt; 1           4.1     272,026           34.6     113,671           41.8
+#&gt;   NonCitizen pctNonCitizen BornOutsideUS pctBornOutsideUS BornOutsideUSNative
+#&gt; 1    158,355          58.2       298,575             32.3              26,549
+#&gt;   pctBornOutsideUSNative NativeEnteredGE2000 pctNativeEnteredGE2000
+#&gt; 1                    8.9              50,168                  179.7
+#&gt;   NativeEnteredLT2000 pctNativeEnteredLT2000 FBEnteredGE2000 pctFBEnteredGE2000
+#&gt; 1              16,744                   63.1         142,385               52.3
+#&gt;   FBEnteredLT2000 pctFBEnteredLT2000 FBMinusSea pctFBMinusSea FBEurope
+#&gt; 1         129,641               47.7    272,026          29.4   40,359
+#&gt;   pctFBEurope  FBAsia pctFBAsia FBAfrica pctFBAfrica FBOceania pctFBOceania
+#&gt; 1        14.8  80,273      29.5   27,516        10.1     1,096          0.4
+#&gt;   FBLatinAmerica pctFBLatinAmerica FBNorthAmerica pctFBNorthAmerica EnglishOnly
+#&gt; 1        117,743              43.3          5,039               1.9     533,394
+#&gt;   pctEnglishOnly OthLang pctOthLang OthLangEnglishLTD pctOthLangEnglishLTD
+#&gt; 1           60.9 341,848       39.1           154,835                 45.3
+#&gt;   Spanish pctSpanish SpanishEnglishLTD pctSpanishEnglishLTD  TotHUs  OccHUs
+#&gt; 1 136,017       15.5            65,849                 48.4 398,624 368,235
+#&gt;   pctOccHUs OwnerOcc pctOwnerOcc RenterOcc pctRenterOcc AvgOwnerHHSize
+#&gt; 1      92.4  124,780        33.9   243,455         66.1           2.44
+#&gt;   AvgRenterHHSize VacHUs pctVacHUs VacantForSale pctVacantForSale VacantForRent
+#&gt; 1            2.28 30,389       7.6         1,308              4.3         8,042
+#&gt;   pctVacantForRent VacantSeasonal pctVacantSeasonal TotalOwnerUnits
+#&gt; 1             26.5          4,665              15.4         126,088
+#&gt;   OwnerVacRate TotalRentalUnits RenterVacRate PersonsInOwnerUnits
+#&gt; 1          1.0          251,497           3.2             304,327
+#&gt;   pctPersonsInOwnerUnits PersonsInRenterUnits pctPersonsInRenterUnits  Units1
+#&gt; 1                   32.9              554,731                    60.0  64,158
+#&gt;   pctUnits1 Units1Detached pctUnits1Detached Units1Attached pctUnits1Attached
+#&gt; 1      16.1         39,488              61.5         24,670              38.5
+#&gt;   Units2 pctUnits2 Units3_4 pctUnits3_4 Units5_9 pctUnits5_9 Units10_19
+#&gt; 1 63,187      15.9   96,125        24.1   44,327        11.1     29,829
+#&gt;   pctUnits10_19 Units20up pctUnits20up MobileHomes pctMobileHomes BoatRV
+#&gt; 1           7.5   100,389         25.2         404            0.1    205
+#&gt;   pctBoatRV MobileHomesPerK Built2010orLater pctBuilt2010orLater Built2000_2009
+#&gt; 1       0.1               1            3,683                 0.9         28,363
+#&gt;   pctBuilt2000_2009 Built1990_1999 pctBuilt1990_1999 Built1980_1989
+#&gt; 1               7.1         14,195               3.6         25,860
+#&gt;   pctBuilt1980_1989 Built1970_1979 pctBuilt1970_1979 Built1960_1969
+#&gt; 1               6.5         31,233               7.8         28,680
+#&gt;   pctBuilt1960_1969 Built1950_1959 pctBuilt1950_1959 Built1940_1949
+#&gt; 1               7.2         22,905               5.7         21,128
+#&gt;   pctBuilt1940_1949 BuiltBefore1940 pctBuiltBefore1940 MovedIn2010orLater
+#&gt; 1               5.3         222,577               55.8            161,276
+#&gt;   pctMovedIn2010orLater MovedIn2000_2009 pctMovedIn2000_2009 MovedIn1990_1999
+#&gt; 1                  43.8          125,228                34.0           39,865
+#&gt;   pctMovedIn1990_1999 MovedIn1980_1989 pctMovedIn1980_1989 MovedInBefore1980
+#&gt; 1                10.8           18,589                 5.0            23,277
+#&gt;   pctMovedInBefore1980 NoVehicles pctNoVehicles Vehicles1 pctVehicles1
+#&gt; 1                  6.3    119,941          32.6   164,439         44.7
+#&gt;   Vehicles2 pctVehicles2 VehiclesGE3 pctVehiclesGE3 HHFUtilGas pctHHFUtilGas
+#&gt; 1    66,966         18.2      16,889            4.6    211,982          57.6
+#&gt;   HHFLPGas pctHHFLPGas HHFElectric pctHHFElectric HHFKerosene pctHHFKerosene
+#&gt; 1    7,849         2.1      89,700           24.4      52,659           14.3
+#&gt;   HHFCoal pctHHFCoal HHFWood pctHHFWood HHFSolar pctHHFSolar HHFOther
+#&gt; 1     171        0.0     270        0.1      177         0.0    1,834
+#&gt;   pctHHFOther HHFNoFuel pctHHFNoFuel NoPlumbing pctNoPlumbing NoKitchen
+#&gt; 1         0.5     3,593          1.0      1,449           0.4     3,153
+#&gt;   pctNoKitchen NoPhone pctNoPhone PersonsPerRoomLow pctPersonsPerRoomLow
+#&gt; 1          0.9   8,711        2.4           356,109                 96.7
+#&gt;   PersonsPerRoomMedium pctPersonsPerRoomMedium PersonsPerRoomHigh
+#&gt; 1                7,686                     2.1              4,440
+#&gt;   pctPersonsPerRoomHigh HvalUnder50 pctHvalUnder50 Hval50 pctHval50 Hval100
+#&gt; 1                   1.2       2,252            1.8    897       0.7   2,202
+#&gt;   pctHval100 Hval150 pctHval150 Hval200 pctHval200 Hval300 pctHval300 Hval500
+#&gt; 1        1.8   4,706        3.8  18,535       14.9  49,032       39.3  34,392
+#&gt;   pctHval500 HvalOverMillion pctHvalOverMillion HvalOver2Million
+#&gt; 1       27.6           9,049                7.3            3,715
+#&gt;   pctHvalOver2Million MedianHValue AvgHValue HUsMort pctHUsMort
+#&gt; 1                 3.0     $488,785  $566,283  89,386       71.6
+#&gt;   HUsMortOver30Pct pctHUsMortOver30Pct MedianOwnerCostsMort HUsNoMort
+#&gt; 1           34,713                38.8               $2,396    35,394
+#&gt;   pctHUsNoMort HUsNoMortOver30Pct pctHUsNoMortOver30Pct MedianOwnerCostsNoMort
+#&gt; 1         28.4              8,122                  22.9                   $900
+#&gt;   CashRenter pctCashRenter NoCashRenter pctNoCashRenter MedianGrossRent
+#&gt; 1    238,921          98.1        4,534             1.9          $1,402
+#&gt;   AvgGrossRent CashRenterOver30Pct pctCashRenterOver30Pct CashRenterOver750
+#&gt; 1       $1,424             115,760                   47.5           165,203
+#&gt;   pctCashRenterOver750 pctNotInsuredUnder18
+#&gt; 1                 67.9                  1.6
 #&gt;  [ reached getOption("max.print") -- omitted 1 row ]</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

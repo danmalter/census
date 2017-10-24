@@ -78,16 +78,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co"># City level data for Chicago and New York</span>
 radius &lt;-<span class="st"> </span><span class="dv">2</span>
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Chicago, IL&quot;</span>, <span class="st">&quot;New York&quot;</span>)
-df &lt;-<span class="st"> </span><span class="kw">getCensus</span>(cities, radius)</code></pre></div>
-<pre><code>## [[1]]
-## [1] &quot;http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=&quot;
-## 
-## [[2]]
-## [1] &quot;http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=NewYork&amp;longitude=-74.0059728&amp;latitude=40.7127753&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">55</span>,<span class="dv">59</span>,<span class="dv">164</span>,<span class="dv">252</span>,<span class="dv">254</span>,<span class="dv">305</span>,<span class="dv">336</span>,<span class="dv">477</span>)]</code></pre></div>
+df &lt;-<span class="st"> </span><span class="kw">getCensus</span>(cities, radius)
+df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">55</span>,<span class="dv">59</span>,<span class="dv">164</span>,<span class="dv">252</span>,<span class="dv">254</span>,<span class="dv">305</span>,<span class="dv">336</span>,<span class="dv">477</span>)]</code></pre></div>
 <pre><code>##   sitename radius  TotPop pctMales pctFemales AvgFamInc pctPrivWageWorkers
 ## 1  Chicago      2 188,040     48.0       52.0  $192,455               86.7
-## 2  NewYork      2 444,373     49.2       50.8  $189,738               84.9
+## 2 New York      2 444,373     49.2       50.8  $189,738               84.9
 ##   pctGovWorkers pctMarried pctBachelors MedianHValue
 ## 1           9.0       35.3         38.9     $430,285
 ## 2           7.2       35.5         36.4     $1009199</code></pre>
