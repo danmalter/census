@@ -15,7 +15,15 @@ Depends:
   R (>= 3.2.0),
   ggmap,
   RCurl,
-  utils
+  utils,
+  proto,
+  RgoogleMaps,
+  png,
+  rjson,
+  mapproj,
+  jpeg,
+  geosphere,
+  bitops
 Suggests:
     knitr,
     rmarkdown,

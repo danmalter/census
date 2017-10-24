@@ -13,7 +13,7 @@ For more details, see [Getting started with census](https://danmalter.github.io/
 Get the latest stable release from CRAN:
 
 ```R
-install.packages("censusapi")
+install.packages("census")
 ```
 
 Install the latest development version of `census` from Github using `devtools`:
