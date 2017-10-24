@@ -6,7 +6,7 @@
 
 `census` relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities.  Google Maps allows for 2500 free requests per day.  If running the same city too often, the Google Maps API may ignore that particular request.
 
-For more details, see [Getting started with census](https://danmalter.github.io/census/articles/getting-started.html) and the package's [website](https://danmalter.github.io/census/).
+For more details, see [Getting started with census](https://danmalter.github.io/census/articles/getting-started.html) and the package's [website](https://danmalter.github.io/census/index.html).
 
 ## Installation
 
