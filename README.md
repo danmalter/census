@@ -34,11 +34,11 @@ library(census)
 radius <- 5
 cities <- c("Chicago, IL", "New York")
 df <- getCensus(cities, radius)
-df[1:2, c("sitename","radius","TotPop", "AvgFamInc","pctPrivWageWorkers", "pctMarried","pctBachelors","MedianHValue")]
+df[1:2, c("sitename","radius","TotPop","pctMales","pctFemales","AvgFamInc","pctPrivWageWorkers","pctGovWorkers", "pctMarried","pctBachelors","MedianHValue")]
 
-#>  sitename  radius  TotPop      AvgFamInc   pctPrivWageWorkers  pctMarried pctBachelors MedianHValue
-#>  Chicago   5       756,255     $124,825    86.0                31.9       31.1         $365,867
-#>  New York  5       2,269,840   $136,510    83.3                35.9       29.8         $782,702
+#>  sitename  radius  TotPop      pctMales pctFemales AvgFamInc   pctPrivWageWorkers  pctGovWorkers pctMarried pctBachelors MedianHValue
+#>  Chicago   5       756,255     49.3     50.7       $124,825    86.0                9.5           31.9       31.1         $365,867
+#>  New York  5       2,269,840   48.6     51.4       $136,510    83.3                9.4           35.9       29.8         $782,702
 ```
 
 If loading city and state information from a csv file, you can just call that column into a list and run that list in `getCensus()`.
