@@ -7,16 +7,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, echo = FALSE}
-NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
-knitr::opts_chunk$set(purl = NOT_CRAN)
-```
 
 ## Using `getCensus`
 
 Below we will collect census data for the US cities of Chicago and New York.  Our radius will be the boundary around the coordinates of the city and the `getCensus` function will output the census data for each city within the given boundary.
 
-```{r, warning=FALSE, message=FALSE}
+```{r set-options, warning=FALSE, message=FALSE}
 library(census)
 
 # City level data for Chicago and New York
