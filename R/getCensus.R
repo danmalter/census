@@ -55,7 +55,7 @@ getCensus <- function(cities, radius) {
     
     # skip if problem with URL - Example bad URL: http://mcdc.missouri.edu/tmpscratch/caps10acsNA.csv
     if (grepl("NA", file.location) == "TRUE"){
-      warning('URL failed, url = ', url[i]) 
+      warning('URL failed: ', url[i]) 
       next
     } else {
       data.tmp <- data.frame(read.csv(file=file.location, colClasses = "character"))
