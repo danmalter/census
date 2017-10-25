@@ -7,16 +7,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, echo = FALSE}
-NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
-knitr::opts_chunk$set(purl = NOT_CRAN)
-```
 
 ## Using `getCensus`
 
 Below we will collect census data for the US cities of Chicago and New York.  Our radius will be the boundary around the coordinates of the city and the `getCensus` function will output the census data for each city within the given boundary.
 
-```{r, warning=FALSE, message=FALSE}
+```{r set-options, warning=FALSE, message=FALSE}
 library(census)
 
 # City level data for Chicago and New York
@@ -26,7 +22,7 @@ df <- getCensus(cities, radius)
 df[1:2, c("sitename","radius","TotPop","pctMales","pctFemales","AvgFamInc","pctPrivWageWorkers","pctGovWorkers", "pctMarried","pctBachelors","MedianHValue")]
 ```
 
-Notice that fields like AvgFamInc and MedianHValue are by default characters with commas.  These fields need to be properly converted into numeric values if further analysis is going to be done.
+Note that fields like AvgFamInc and MedianHValue are by default characters with commas.  These fields need to be properly converted into numeric values if further analysis is going to be done.
 
 ## Additional resources
 * [Missouri Census Data Center](http://mcdc.missouri.edu/)

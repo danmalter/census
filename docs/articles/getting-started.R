@@ -1,13 +1,9 @@
-## ---- echo = FALSE-------------------------------------------------------
-NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
-knitr::opts_chunk$set(purl = NOT_CRAN)
-
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ----set-options, warning=FALSE, message=FALSE---------------------------
 library(census)
 
 # City level data for Chicago and New York
-radius <- 2
+radius <- 5
 cities <- c("Chicago, IL", "New York")
 df <- getCensus(cities, radius)
-df[1:2, c(1:2,12,55,59,164,252,254,305,336,477)]
+df[1:2, c("sitename","radius","TotPop","pctMales","pctFemales","AvgFamInc","pctPrivWageWorkers","pctGovWorkers", "pctMarried","pctBachelors","MedianHValue")]
 

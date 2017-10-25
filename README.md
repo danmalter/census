@@ -41,7 +41,7 @@ df[1:2, c("sitename","radius","TotPop","pctMales","pctFemales","AvgFamInc","pctP
 #>  New York  5       2,269,840   48.6     51.4       $136,510    83.3                9.4           35.9       29.8         $782,702
 ```
 
-If loading city and state information from a csv file, you can just call that column into a list and run that list in `getCensus()`.
+If loading city and state information from a csv file, you can call that column into a list and run that list in `getCensus()`.
 
 ```R
 radius <- 2

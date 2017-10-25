@@ -73,7 +73,7 @@
 <a href="#census" class="anchor"></a>census</h1></div>
 
 <p><code>census</code> is a package for getting data from the <a href="http://mcdc.missouri.edu/">Missouri Census Data Center</a>. As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. Data can only be collected for cities and towns that have a population of 5,000 or more. An example of the data being collected from Missouri Census Data Center can be seen <a href="http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago,IL&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=">here</a>.</p>
-<p><code>census</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2,500 free requests per day. Note that running a query on any given city too often over too short of a period can result in Google Maps API timeouts. If this happens, the <code>getCensus</code> function will skip that city. In addition, it is possible that a city is too small and there is no data provided by the Missouri Census Data Center. If this is the case, these particular cities will be skipped over as well.</p>
+<p><code>census</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2,500 free requests per day. Note that running a query on any given city too often over too short of a period can result in Google Maps API timeouts. If this happens, the <code>getCensus</code> function will skip that city. In addition, it is possible that a radius around a small town or city is too small and that there is no data provided by the Missouri Census Data Center. If this is the case, these particular cities will be skipped over as well and a warning message will show.</p>
 <p>For more details, see <a href="https://danmalter.github.io/census/articles/getting-started.html">Getting Started with Census</a> and the package’s <a href="https://danmalter.github.io/census/index.html">website</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -94,12 +94,12 @@ devtools::<span class="kw">install_github</span>(<span class="st">"danmalter/cen
 radius &lt;-<span class="st"> </span><span class="dv">5</span>
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Chicago, IL"</span>, <span class="st">"New York"</span>)
 df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.html">getCensus</a></span>(cities, radius)
-df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="st">"sitename"</span>,<span class="st">"radius"</span>,<span class="st">"TotPop"</span>, <span class="st">"AvgFamInc"</span>,<span class="st">"pctPrivWageWorkers"</span>, <span class="st">"pctMarried"</span>,<span class="st">"pctBachelors"</span>,<span class="st">"MedianHValue"</span>)]
+df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="st">"sitename"</span>,<span class="st">"radius"</span>,<span class="st">"TotPop"</span>,<span class="st">"pctMales"</span>,<span class="st">"pctFemales"</span>,<span class="st">"AvgFamInc"</span>,<span class="st">"pctPrivWageWorkers"</span>,<span class="st">"pctGovWorkers"</span>, <span class="st">"pctMarried"</span>,<span class="st">"pctBachelors"</span>,<span class="st">"MedianHValue"</span>)]
 
-<span class="co">#&gt;  sitename  radius  TotPop      AvgFamInc   pctPrivWageWorkers  pctMarried pctBachelors MedianHValue</span>
-<span class="co">#&gt;  Chicago   5       756,255     $124,825    86.0                31.9       31.1         $365,867</span>
-<span class="co">#&gt;  New York  5       2,269,840   $136,510    83.3                35.9       29.8         $782,702</span></code></pre></div>
-<p>If loading city and state information from a csv file, you can just call that column into a list and run that list in <code><a href="reference/getCensus.html">getCensus()</a></code>.</p>
+<span class="co">#&gt;  sitename  radius  TotPop      pctMales pctFemales AvgFamInc   pctPrivWageWorkers  pctGovWorkers pctMarried pctBachelors MedianHValue</span>
+<span class="co">#&gt;  Chicago   5       756,255     49.3     50.7       $124,825    86.0                9.5           31.9       31.1         $365,867</span>
+<span class="co">#&gt;  New York  5       2,269,840   48.6     51.4       $136,510    83.3                9.4           35.9       29.8         $782,702</span></code></pre></div>
+<p>If loading city and state information from a csv file, you can call that column into a list and run that list in <code><a href="reference/getCensus.html">getCensus()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="dv">2</span>
 cities &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">"~/path/to/file.csv"</span>)
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">as.character</span>(cities$City_State))
