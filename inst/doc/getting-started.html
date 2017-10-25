@@ -12,7 +12,7 @@
 
 
 
-<title>Getting started with census</title>
+<title>Getting Started with Census</title>
 
 
 
@@ -66,26 +66,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<h1 class="title toc-ignore">Getting started with census</h1>
+<h1 class="title toc-ignore">Getting Started with Census</h1>
 
 
 
 <div id="using-getcensus" class="section level2">
 <h2>Using <code>getCensus</code></h2>
-<p>Below we will collect census data for the US cities of Chicago and New York. Our radius will be the boundary around the coordinates of the city and the getCensus function will output out census data for each city in the given boundary.</p>
+<p>Below we will collect census data for the US cities of Chicago and New York. Our radius will be the boundary around the coordinates of the city and the <code>getCensus</code> function will output the census data for each city within the given boundary.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(census)
 
 <span class="co"># City level data for Chicago and New York</span>
-radius &lt;-<span class="st"> </span><span class="dv">2</span>
+radius &lt;-<span class="st"> </span><span class="dv">5</span>
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Chicago, IL&quot;</span>, <span class="st">&quot;New York&quot;</span>)
 df &lt;-<span class="st"> </span><span class="kw">getCensus</span>(cities, radius)
-df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">55</span>,<span class="dv">59</span>,<span class="dv">164</span>,<span class="dv">252</span>,<span class="dv">254</span>,<span class="dv">305</span>,<span class="dv">336</span>,<span class="dv">477</span>)]</code></pre></div>
-<pre><code>##   sitename radius  TotPop pctMales pctFemales AvgFamInc pctPrivWageWorkers
-## 1  Chicago      2 188,040     48.0       52.0  $192,455               86.7
-## 2 New York      2 444,373     49.2       50.8  $189,738               84.9
-##   pctGovWorkers pctMarried pctBachelors MedianHValue
-## 1           9.0       35.3         38.9     $430,285
-## 2           7.2       35.5         36.4     $1009199</code></pre>
+df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="st">&quot;sitename&quot;</span>,<span class="st">&quot;radius&quot;</span>,<span class="st">&quot;TotPop&quot;</span>,<span class="st">&quot;pctMales&quot;</span>,<span class="st">&quot;pctFemales&quot;</span>,<span class="st">&quot;AvgFamInc&quot;</span>,<span class="st">&quot;pctPrivWageWorkers&quot;</span>,<span class="st">&quot;pctGovWorkers&quot;</span>, <span class="st">&quot;pctMarried&quot;</span>,<span class="st">&quot;pctBachelors&quot;</span>,<span class="st">&quot;MedianHValue&quot;</span>)]</code></pre></div>
+<pre><code>##   sitename radius    TotPop pctMales pctFemales AvgFamInc
+## 1  Chicago      5   756,255     49.3       50.7  $124,825
+## 2 New York      5 2,269,840     48.6       51.4  $136,510
+##   pctPrivWageWorkers pctGovWorkers pctMarried pctBachelors MedianHValue
+## 1               86.0           9.5       31.9         31.1     $365,867
+## 2               83.3           9.4       35.9         29.8     $782,702</code></pre>
+<p>Notice that fields like AvgFamInc and MedianHValue are by default characters with commas. These fields need to be properly converted into numeric values if further analysis is going to be done.</p>
 </div>
 <div id="additional-resources" class="section level2">
 <h2>Additional resources</h2>

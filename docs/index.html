@@ -45,7 +45,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/getting-started.html">Getting started with census</a>
+      <a href="articles/getting-started.html">Getting Started with Census</a>
     </li>
   </ul>
 </li>
@@ -72,9 +72,9 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#census" class="anchor"></a>census</h1></div>
 
-<p><code>census</code> is a package for getting data from the <a href="http://mcdc.missouri.edu/">Missouri Census Data Center</a>. As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. Cities and towns must have a population of 5,000 or more. An example of the data being collected from Missouri Census Data Center can be seen <a href="http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago,IL&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=">here</a>.</p>
-<p><code>census</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2500 free requests per day. If running the same city too often, the Google Maps API may ignore that particular request.</p>
-<p>For more details, see <a href="https://danmalter.github.io/census/articles/getting-started.html">Getting started with census</a> and the package’s <a href="https://danmalter.github.io/census/">website</a>.</p>
+<p><code>census</code> is a package for getting data from the <a href="http://mcdc.missouri.edu/">Missouri Census Data Center</a>. As of 2017, over 500 data points are available, including population, income, education and employment levels by age and race. Data can only be collected for cities and towns that have a population of 5,000 or more. An example of the data being collected from Missouri Census Data Center can be seen <a href="http://mcdc.missouri.edu/cgi-bin/broker?_PROGRAM=websas.caps10acsb.sas&amp;SERVICE=appdev&amp;sitename=Chicago,IL&amp;longitude=-87.6297982&amp;latitude=41.8781136&amp;radii=2&amp;dprofile=on&amp;eprofile=on&amp;sprofile=on&amp;hprofile=on&amp;cntypops=on&amp;printdetail=on&amp;_debug=">here</a>.</p>
+<p><code>census</code> relies on the GoogleMaps API for retrieving latitude and longitude coordinates for specified cities. Google Maps allows for 2,500 free requests per day. Note that running a query on any given city too often over too short of a period can result in Google Maps API timeouts. If this happens, the <code>getCensus</code> function will skip that city. In addition, it is possible that a city is too small and there is no data provided by the Missouri Census Data Center. If this is the case, these particular cities will be skipped over as well.</p>
+<p>For more details, see <a href="https://danmalter.github.io/census/articles/getting-started.html">Getting Started with Census</a> and the package’s <a href="https://danmalter.github.io/census/index.html">website</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -87,31 +87,31 @@ devtools::<span class="kw">install_github</span>(<span class="st">"danmalter/cen
 <div id="usage-examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage-examples" class="anchor"></a>Usage examples</h2>
-<p>Get demographic data for the cities of Chicago and New York. This example only shows some of the over 500 features available. Note that the state is not needed in <code><a href="reference/getCensus.html">getCensus()</a></code>, but it can run into problems if the city name appears in multiple states.</p>
+<p>This example shows how to retrieve demographic data for the cities of Chicago and New York. This example only shows some of the over 500 features available. Note that the state is not needed in <code><a href="reference/getCensus.html">getCensus()</a></code>, but you can run into problems if the city name appears in multiple states (i.e. Portland, Maine and Portland, Oregon).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(census)
 
 <span class="co"># City level data for Chicago and New York</span>
-radius &lt;-<span class="st"> </span><span class="dv">2</span>
+radius &lt;-<span class="st"> </span><span class="dv">5</span>
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Chicago, IL"</span>, <span class="st">"New York"</span>)
 df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.html">getCensus</a></span>(cities, radius)
-df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">55</span>,<span class="dv">59</span>,<span class="dv">164</span>,<span class="dv">252</span>,<span class="dv">254</span>,<span class="dv">305</span>,<span class="dv">336</span>,<span class="dv">477</span>)]
+df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="st">"sitename"</span>,<span class="st">"radius"</span>,<span class="st">"TotPop"</span>, <span class="st">"AvgFamInc"</span>,<span class="st">"pctPrivWageWorkers"</span>, <span class="st">"pctMarried"</span>,<span class="st">"pctBachelors"</span>,<span class="st">"MedianHValue"</span>)]
 
-<span class="co">#&gt;  sitename  radius  TotPop    pctMales pctFemales AvgFamInc   pctPrivWageWorkers  pctGovWorkers pctMarried pctBachelors MedianHValue</span>
-<span class="co">#&gt;  Chicago   2       188,040   48.0     52.0       $192,455    86.7                9.0           35.3       38.9         $430,285</span>
-<span class="co">#&gt;  NewYork   2       444,373   49.2     50.8       $189,738    84.9                7.2           35.5       36.4         $1009199</span></code></pre></div>
-<p>If loading city and state information from a csv file, you can just call that column into a list.</p>
+<span class="co">#&gt;  sitename  radius  TotPop      AvgFamInc   pctPrivWageWorkers  pctMarried pctBachelors MedianHValue</span>
+<span class="co">#&gt;  Chicago   5       756,255     $124,825    86.0                31.9       31.1         $365,867</span>
+<span class="co">#&gt;  New York  5       2,269,840   $136,510    83.3                35.9       29.8         $782,702</span></code></pre></div>
+<p>If loading city and state information from a csv file, you can just call that column into a list and run that list in <code><a href="reference/getCensus.html">getCensus()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="dv">2</span>
 cities &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">"~/path/to/file.csv"</span>)
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">as.character</span>(cities$City_State))
 df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.html">getCensus</a></span>(cities, radius)
 <span class="kw">head</span>(df)</code></pre></div>
-<p>To view Google Maps API usage limit. The below function is from the ggmaps package.</p>
+<p>To view Google Maps API usage limit. The below function is from the <code>ggmaps</code> package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">geocodeQueryCheck</span>() </code></pre></div>
 </div>
 <div id="report-an-issue" class="section level2">
 <h2 class="hasAnchor">
 <a href="#report-an-issue" class="anchor"></a>Report an issue</h2>
-<p>If you having issues using, installing, and/or have a question about census, please post a <a href="https://github.com/danmalter/census/issues">new issue</a></p>
+<p>If you have issues using, installing, and/or have a question about census, please post a <a href="https://github.com/danmalter/census/issues">new issue</a>.</p>
 </div>
 <div id="disclaimer" class="section level2">
 <h2 class="hasAnchor">

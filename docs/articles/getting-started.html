@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Getting started with census • census</title>
+<title>Getting Started with Census • census</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -45,7 +45,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/getting-started.html">Getting started with census</a>
+      <a href="../articles/getting-started.html">Getting Started with Census</a>
     </li>
   </ul>
 </li>
@@ -69,7 +69,7 @@
       </header><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
-      <h1>Getting started with census</h1>
+      <h1>Getting Started with Census</h1>
             
           </div>
 
@@ -80,20 +80,21 @@
 <h2 class="hasAnchor">
 <a href="#using-getcensus" class="anchor"></a>Using <code>getCensus</code>
 </h2>
-<p>Below we will collect census data for the US cities of Chicago and New York. Our radius will be the boundary around the coordinates of the city and the getCensus function will output out census data for each city in the given boundary.</p>
+<p>Below we will collect census data for the US cities of Chicago and New York. Our radius will be the boundary around the coordinates of the city and the <code>getCensus</code> function will output the census data for each city within the given boundary.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(census)
 
 <span class="co"># City level data for Chicago and New York</span>
-radius &lt;-<span class="st"> </span><span class="dv">2</span>
+radius &lt;-<span class="st"> </span><span class="dv">5</span>
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"Chicago, IL"</span>, <span class="st">"New York"</span>)
 df &lt;-<span class="st"> </span><span class="kw"><a href="../reference/getCensus.html">getCensus</a></span>(cities, radius)
-df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">55</span>,<span class="dv">59</span>,<span class="dv">164</span>,<span class="dv">252</span>,<span class="dv">254</span>,<span class="dv">305</span>,<span class="dv">336</span>,<span class="dv">477</span>)]</code></pre></div>
-<pre><code>##   sitename radius  TotPop pctMales pctFemales AvgFamInc pctPrivWageWorkers
-## 1  Chicago      2 188,040     48.0       52.0  $192,455               86.7
-## 2 New York      2 444,373     49.2       50.8  $189,738               84.9
-##   pctGovWorkers pctMarried pctBachelors MedianHValue
-## 1           9.0       35.3         38.9     $430,285
-## 2           7.2       35.5         36.4     $1009199</code></pre>
+df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span>(<span class="st">"sitename"</span>,<span class="st">"radius"</span>,<span class="st">"TotPop"</span>,<span class="st">"pctMales"</span>,<span class="st">"pctFemales"</span>,<span class="st">"AvgFamInc"</span>,<span class="st">"pctPrivWageWorkers"</span>,<span class="st">"pctGovWorkers"</span>, <span class="st">"pctMarried"</span>,<span class="st">"pctBachelors"</span>,<span class="st">"MedianHValue"</span>)]</code></pre></div>
+<pre><code>##   sitename radius    TotPop pctMales pctFemales AvgFamInc
+## 1  Chicago      5   756,255     49.3       50.7  $124,825
+## 2 New York      5 2,269,840     48.6       51.4  $136,510
+##   pctPrivWageWorkers pctGovWorkers pctMarried pctBachelors MedianHValue
+## 1               86.0           9.5       31.9         31.1     $365,867
+## 2               83.3           9.4       35.9         29.8     $782,702</code></pre>
+<p>Notice that fields like AvgFamInc and MedianHValue are by default characters with commas. These fields need to be properly converted into numeric values if further analysis is going to be done.</p>
 </div>
 <div id="additional-resources" class="section level2">
 <h2 class="hasAnchor">
