@@ -100,7 +100,7 @@ df[<span class="dv">1</span>:<span class="dv">2</span>, <span class="kw">c</span
 <span class="co">#&gt;  Chicago   5       756,255     49.3     50.7       $124,825    86.0                9.5           31.9       31.1         $365,867</span>
 <span class="co">#&gt;  New York  5       2,269,840   48.6     51.4       $136,510    83.3                9.4           35.9       29.8         $782,702</span></code></pre></div>
 <p>If loading city and state information from a csv file, you can call that column into a list and run that list in <code><a href="reference/getCensus.html">getCensus()</a></code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="dv">2</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="dv">5</span>
 cities &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">"~/path/to/file.csv"</span>)
 cities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">as.character</span>(cities$City_State))
 df &lt;-<span class="st"> </span><span class="kw"><a href="reference/getCensus.html">getCensus</a></span>(cities, radius)

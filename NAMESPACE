@@ -3,4 +3,5 @@
 export(getCensus)
 importFrom(RCurl,getURL)
 importFrom(ggmap,geocode)
+importFrom(stats,na.omit)
 importFrom(utils,read.csv)

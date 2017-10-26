@@ -7,6 +7,7 @@
 #' @importFrom RCurl getURL
 #' @importFrom ggmap geocode
 #' @importFrom utils read.csv
+#' @importFrom stats na.omit
 #' @examples
 #' radius <- 5
 #' cities <- c("Boston", "Los Angeles")

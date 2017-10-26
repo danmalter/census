@@ -44,7 +44,7 @@ df[1:2, c("sitename","radius","TotPop","pctMales","pctFemales","AvgFamInc","pctP
 If loading city and state information from a csv file, you can call that column into a list and run that list in `getCensus()`.
 
 ```R
-radius <- 2
+radius <- 5
 cities <- read.csv("~/path/to/file.csv")
 cities <- c(as.character(cities$City_State))
 df <- getCensus(cities, radius)
